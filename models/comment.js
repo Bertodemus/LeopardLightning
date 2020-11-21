@@ -10,18 +10,11 @@ module.exports = function(sequelize, DataTypes){
     });
 
     Comment.associate = (models) => {
-        Comment.belongsTo(models.Couch, {
-        });
-    };
-
-    Comment.associate = (models) => {
-        Comment.belongsTo(models.Tabletop, {
-        });
-    };
-
-    Comment.associate = (models) => {
-        Comment.belongsTo(models.Turf, {
-        });
+        Comment.belongsToMany(models.Event, {
+            through: "event_comment",
+            as: "events",
+            foreignKey: "comment_id",
+          });
     };
 
     Comment.associate = (models) => {

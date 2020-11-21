@@ -1,6 +1,10 @@
 module.exports = function(sequelize, DataTypes){
-    const Tabletop = sequelize.define("Tabletop", {
+    const Event = sequelize.define("Event", {
         title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        category: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -20,7 +24,7 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        team_one_game: {
+        team_one_genre: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -40,7 +44,7 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        team_two_game: {
+        team_two_genre: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -53,11 +57,13 @@ module.exports = function(sequelize, DataTypes){
         freezeTableName: true
     });
 
-    Tabletop.associate = (models) => {
-        Tabletop.hasMany(models.Comment, {
-            onDelete: "cascade"
-        });
+    Event.associate = (models) => {
+        Event.belongsToMany(models.Comment, {
+            through: "event_comment",
+            as: "comments",
+            foreignKey: "event_id",
+          });
     };
 
-    return Tabletop;
+    return Event;
 };
