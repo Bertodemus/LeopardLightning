@@ -1,0 +1,18 @@
+/* form.signup,
+form.login {
+  margin-top: 50px;
+} */
+
+body {
+      background-image: linear-gradient(gray, black) fixed;
+}
+
+nav {
+  color: rgb(230, 230, 230);
+}
+
+div.event-turf {
+  border: 1px solid rgb(56, 56, 56);
+  border-radius: 2px;
+  background-color: rgb(230, 230, 230);
+}
