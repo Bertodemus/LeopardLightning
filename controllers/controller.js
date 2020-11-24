@@ -15,7 +15,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
   userFind(req, res) {
-    retunr User.findall({})
+    return User.findall({})
   },
   eventCreate(req, res) {
     return Event.create({
