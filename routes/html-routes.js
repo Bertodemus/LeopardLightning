@@ -28,3 +28,5 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/members"));
   });
 };
+
+//made it render handlebar files, feel free to change back to the html if you need to //DS-11/24
