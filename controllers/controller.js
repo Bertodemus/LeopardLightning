@@ -14,6 +14,9 @@ module.exports = {
       .then(user => res.status(201).send(user))
       .catch(error => res.status(400).send(error));
   },
+  userFind(req, res) {
+    retunr User.findall({})
+  },
   eventCreate(req, res) {
     return Event.create({
       title: req.body.eventTitle,
@@ -32,12 +35,19 @@ module.exports = {
       .then(user => res.status(201).send(user))
       .catch(error => res.status(400).send(error));
   },
-  commentCreate() {
+  eventFind(req, res) {
+    return Event.findall({})
+  },
+  commentCreate(req, res) {
     return Comment.create({
       text: req.body.commentText
     })
-    .then(user => res.status(201).send(user))
+      .then(user => res.status(201).send(user))
       .catch(error => res.status(400).send(error));
+  },
+  findComment(req, res) {
+    return Comment.findall({})
   }
 };
+
 //Not 100% where to go from here, added controller to create events, users and comments. feel free to adjust to fit other needs //DS-11/24
