@@ -15,7 +15,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
   userFind(req, res) {
-    return User.findall({})
+    return User.findall({});
   },
   eventCreate(req, res) {
     return Event.create({
@@ -36,7 +36,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
   eventFind(req, res) {
-    return Event.findall({})
+    return Event.findall({});
   },
   commentCreate(req, res) {
     return Comment.create({
@@ -46,7 +46,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
   findComment(req, res) {
-    return Comment.findall({})
+    return Comment.findall({});
   }
 };
 
