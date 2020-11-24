@@ -1,8 +1,12 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+//Imports handlebars //DS-11/24
+const exphbs = require ("express-handlebars");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+//***Imports routes //DS-11/24 
+const routes = require("./controllers/Controller.js");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -19,6 +23,13 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+//***handlebars code, feel free to comment out if you need to work on the HTML //DS-11/24
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+//***gives server access to routes //DS 11-24
+app.use(routes)
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
