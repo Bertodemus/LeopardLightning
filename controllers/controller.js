@@ -27,8 +27,17 @@ module.exports = {
       team_two_name: req.body.teamTwoName,
       team_two_loss: req.body.teamTwoLoss,
       team_two_genre: req.body.teamTwoGenre,
-      team_two_votes: req.body.teamTwoVotes,
+      team_two_votes: req.body.teamTwoVotes
     })
-  
+      .then(user => res.status(201).send(user))
+      .catch(error => res.status(400).send(error));
+  },
+  commentCreate() {
+    return Comment.create({
+      text: req.body.commentText
+    })
+    .then(user => res.status(201).send(user))
+      .catch(error => res.status(400).send(error));
+  }
 };
-//Not 100% where to go from here, bu my goal is to import the models here ad then import this file into the controller, to keep everythig somewhat modular and logical. //DS-11/24
+//Not 100% where to go from here, added controller to create events, users and comments. feel free to adjust to fit other needs //DS-11/24
