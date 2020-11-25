@@ -1,4 +1,50 @@
-form.signup,
+/* form.signup,
 form.login {
   margin-top: 50px;
+} */
+
+body {
+      background-image: linear-gradient(gray, black) fixed;
+}
+
+nav {
+  color: rgb(230, 230, 230);
+}
+
+div.event-turf {
+  border: 1px solid rgb(56, 56, 56);
+  border-radius: 2px;
+  background-color: rgb(230, 230, 230);
+}
+
+.navbar {
+  background-color: black;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.card {
+  border:solid;
+}
+
+.card-title {
+  text-align: center;
+  border-bottom: 1px solid
+}
+
+.list-group-item {
+  border: solid;
+}
+
+.turf {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+html {
+  overflow-y: scroll;
 }
