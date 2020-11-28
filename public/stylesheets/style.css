@@ -1,15 +1,24 @@
-/* form.signup,
-form.login {
-  margin-top: 50px;
-} */
-
 body {
-      background-image: linear-gradient(gray, black) fixed;
+  background: linear-gradient(#313131, #1b1b1b) fixed;
+}
+
+#main {
+  background-image: url("../assets/images/iconsTogether2.png");
 }
 
 nav {
-  color: rgb(230, 230, 230);
+  color: #f7ae3f;
+  font-family: 'Questrial', sans-serif;
+  font-size: 3rem;
 }
+
+footer {
+  color: #f7ae3f;
+  font-family: 'Questrial', sans-serif;
+  font-size: 1rem;
+  background-color: #225d68;
+}
+
 
 div.event-turf {
   border: 1px solid rgb(56, 56, 56);
@@ -17,34 +26,22 @@ div.event-turf {
   background-color: rgb(230, 230, 230);
 }
 
-.navbar {
-  background-color: black;
+.bg-nav {
+  background-color: #225d68;
 }
 
-.navbar-brand {
-  color: white;
+div .tab-pane {
+  background-color: rgb(255, 255, 255);
+  
 }
 
-.card {
-  border:solid;
+.couchEventHeader {
+  color: #f7ae3f;
+  background-color: #225e68b6;
 }
 
-.card-title {
-  text-align: center;
-  border-bottom: 1px solid
+.couchEventFooter {
+  background-color: #0000001c;
 }
 
-.list-group-item {
-  border: solid;
-}
 
-.turf {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-}
-
-html {
-  overflow-y: scroll;
-}
