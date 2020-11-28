@@ -1,92 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title> Together:Again </title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <head>
+    <title>Together:Against</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="../public/stylesheets/styleIndex.css" rel="stylesheet">
 </head>
 
-<body class="container">
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand">Together:Against</a>
+<body class="container pl-0 pr-0">
+
+  <nav class="navbar navbar-dark bg-nav">
+    <a class="navbar-brand pt-0 pb-0"><img src="../public/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
     <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondadry my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-      <button class="btn btn-secondadry my-2 my-sm-0 ml-2" type="submit"><i class="far fa-user-circle"></i></button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondadry my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        <button class="btn btn-secondadry my-2 my-sm-0 ml-2" type="submit"><i class="far fa-user-circle"></i></button>
     </form>
-</nav>
+  </nav>  
 
-  <div class="row">
-    <div class="col-sm-12">
-        <img src = "./assets/images/turf1.jpg" class = "turf">
-    </div>
-  </div>
+  <div id="main">
+    <div class="row py-3">
+      <div class="col-4 pl-5 text-center">
+        <img src="assets/images/couch.png" width="280px" >
+      </div>
+      <div class="col-4 pl-4 text-center pr-4">
+        <img src="assets/images/table.png" width="280px">
+      </div>
+      <div class="col-4 text-center pr-5">
+        <img src="assets/images/turf.png" width="280px">
+      </div>
 
-  <body>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Team # 1</h5>
-              <p class="card-text">Stats and information about the event.</p>
+      <!-- EVENT NUMBER ONE ROWS-->
+      <!-- EVENT NUMBER ONE HEADER-->
+
+      <div class="row eventOne">
+        <div class="col-6 text-center pl-5">
+          <div class="row pb-2 px-3">
+            <div class="col-12 couchEventHeader">
+                OPPONENT #1
+            </div>
+          </div>
+
+      <!-- STAT BOX-->
+      
+        <div class="row eventStats px-3">
+          <div class="col-12 py-2 event-turf">
+            <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
+              <div style="width: auto; height: 300px;">
+              <p class="statsText1 py-2 px-2">
+                I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, 
+                "I can't do it. I just can't do it. It's inappropriate. It's not nice." I'm speaking with myself, number one, because 
+                I have a very good brain and I've said a lot of things. I think the only card she has is the Lorem card. The concept 
+                of Lorem Ipsum was created by and for the Chinese in order to make U.S. design jobs non-competitive.
+              </p>
+            </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Team #2 </h5>
-              <p class="card-text">Stats and information about the event.</p>
-            </div>
-          </div>
+   
+        
+      <!-- COMMENT HEADER-->
+        <div class="row pb-.5 pt-2 px-3">
+          <div class="col-12 couchEventHeader">
+            COMMENTS
         </div>
       </div>
-
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-        <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    
-      <div class="row">
-        <div class="groupOne col-md-6">
-            <ul class="list-group">
+      
+    <!-- USER COMMENTS-->
+        
+      <div class="row py-2 px-3">
+          <div class="col-12 py-2 event-turf">
+            <ul class="list-group text-left">
                 <li class="listOne list-group-item">The user comments </li>
                 <li class="listOne list-group-item">Comments Here</li>
                 <li class="listOne list-group-item">More comments</li>
                 <li class="listOne list-group-item">Some more comments</li>
               </ul>
+          </div>
+        </div>
+      </div>
+        
+      
+      <!-- EVENT NUMBER TWO ROWS-->
+      <!-- EVENT NUMBER TWO HEADER-->
+     
+      <div class="col-6 text-center pr-5">
+        <div class="row pb-2 px-3">
+          <div class="col-12 couchEventHeader">
+              OPPONENT #2
+          </div>
         </div>
 
-        <div class="groupTwo col-md-6">
-            <ul class="list-group">
-                <li class="listTwo list-group-item">The user comments </li>
-                <li class="listTwo list-group-item">Comments Here</li>
-                <li class="listTwo list-group-item">More comments</li>
-                <li class="listTwo list-group-item">Some more comments</li>
+        <!-- STAT BOX-->
+
+        <div class="row eventStats px-3">
+          <div class="col-12 py-2 event-turf">
+            <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
+              <div style="width: auto; height: 300px;">
+              <p class="statsText2 py-2">
+                Cubs batter's box glove force dead ball era, club play. Ball rotation walk off cellar runs 
+                mendoza line lineup. Diamond skipper base on balls sacrifice bunt scorecard forkball reliever 
+                wild pitch. Backstop rotation diamond shortstop batting average cork fielder's choice stadium. 
+                Cellar rainout fan run batted in cycle run club. Extra innings swing shortstop baseball card on deck steal win.
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- COMMENT BOX-->
+
+        <div class="row pb-.5 pt-2 px-3">
+          <div class="col-12 couchEventHeader">
+            COMMENTS
+        </div>
+      </div>
+      
+      <!-- USER COMMENTS-->
+
+      <div class="row py-2 px-3">
+          <div class="col-12 py-2 event-turf">
+            <ul class="list-group text-left">
+                <li class="listOne list-group-item">The user comments </li>
+                <li class="listOne list-group-item">Comments Here</li>
+                <li class="listOne list-group-item">More comments</li>
+                <li class="listOne list-group-item">Some more comments</li>
               </ul>
+          </div>
         </div>
+   
       </div>
+      </div>
+    </div>
 
-      <div class="form-group">
-        <label for="commentBox">Add a comment</label>
-        <textarea class="form-control" id="commentBox" rows="3"></textarea>
+      <!-- COMMENT BOX HEADER-->
+
+    <div class="row px-5">
+      <div class="col-12 text-center couchEventHeader">
+       BACK UP YOUR PROJECTED WINNER
       </div>
-      <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
+    
+
+      <!-- COMMENT BOX-->
+
+    <form>
+      <div class="form-group px-4">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
+        <input class="btn btn-primary" type="submit" value="Submit">      
+      </div>
     </form>
 
+  
+      <!-- PICTURES-->
+
+    <div class="row px-3">
+      <div class="col-12 couchEventHeader">
+          <br>
+      </div>
+      <div class="col-sm pl-5 text-center">
+        <img src="assets/images/couchBottom.png" width="280px" >
+      </div>
+      <div class="col-sm pl-4 text-center pr-4">
+        <img src="assets/images/tableBottom.png" width="280px">
+      </div>
+      <div class="col-sm text-center pr-5">
+        <img src="assets/images/turfBottom.png" width="280px">
+      </div>
     </div>
+
+      
+      <!-- FOOTER -->
+
+  <footer class="footer pt-3 pb-3">
+    <div class="container text-center">
+      
+    <span>TOGETHER:AGAINST 2020</span>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+
+
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-
-
-</div>
-
 </html>
