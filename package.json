@@ -18,11 +18,7 @@
     "express": "^4.17.0",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.16.1",
-<<<<<<< HEAD
     "jdenticon": "^3.0.1",
-=======
-    "handlebars": "^4.7.6",
->>>>>>> 2afb7713ff22ac083148a3514f96c0ba2238022b
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
