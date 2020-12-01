@@ -18,15 +18,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      team_one_win: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      team_one_loss: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      team_one_genre: {
+      team_one_stat: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -38,15 +30,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      team_two_win: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      team_two_loss: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      team_two_genre: {
+      team_two_stat: {
         type: DataTypes.STRING,
         allowNull: false
       },
