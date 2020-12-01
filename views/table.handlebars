@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <title>Together:Against</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    <link href="../public/stylesheets/styleIndex.css" rel="stylesheet">
-  </head>
-
-  <body class="container pl-0 pr-0">
-
     <nav class="navbar navbar-dark bg-nav">
         <a class="navbar-brand pt-0 pb-0"><img src="../public/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit"><i class="far fa-user-circle"></i></button>
+            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
+                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
+            </button>
         </form>
-    </nav>  
+    </nav>
 
     <div id="main">
         <div class="row py-3">
             <div class="col-4 text-center">
             </div>
             <div class="col-4 text-center">
-                <img src="assets/images/couch.png" width="280px" >
+                <img src="assets/images/table.png" width="280px" >
             </div>
             <div class="col-4 text-center">
             </div>
@@ -39,8 +25,9 @@
                 <div class="col-6 text-center pl-5 pr-0">
                     <div class="row pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                        PLAYER 1
+                            {{tableEvent.teamOne.name}}
                         </div>
+                        {{!-- this is here for the progressbar.js  --}}
                         <div id="oppon1"></div>
                     </div>
 
@@ -50,21 +37,19 @@
                             <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                                 <div style="width: auto; height: 300px;">
                                     <p class="statsText1 py-2 px-2">
-                                        I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, 
-                                        "I can't do it. I just can't do it. It's inappropriate. It's not nice." I'm speaking with myself, number one, because 
-                                        I have a very good brain and I've said a lot of things. I think the only card she has is the Lorem card. The concept 
-                                        of Lorem Ipsum was created by and for the Chinese in order to make U.S. design jobs non-competitive.
+                                        {{tableEvent.teamOne.stats}}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+    
             
                     <!-- COMMENT HEADER-->
                     <div class="row pb-1 pt-2 px-3">
                         <div class="col-12 couchEventHeader">
-                            COMMENTS FOR PLAYER 1
+                        COMMENTS FOR {{tableEvent.teamOne.name}}
+
                         </div>
                     </div>
         
@@ -72,24 +57,23 @@
                     <div class="row px-3 pb-1">
                         <div class="col-12 py-2 event-turf">
                             <ul class="list-group text-left">
-                                <li class="listOne list-group-item">The user comments </li>
-                                <li class="listOne list-group-item">Comments Here</li>
-                                <li class="listOne list-group-item">More comments</li>
-                                <li class="listOne list-group-item">Some more comments</li>
+                                {{#each tableEvent.teamOne.comments}}
+                                    {{!-- this will probably have to be an array --}}
+                                    <li class="listOne list-group-item">{{this}}</li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
 
                 </div>
             
-        
                 <!-- EVENT NUMBER TWO ROWS-->
                 <!-- EVENT NUMBER TWO HEADER-->
                 <div class="col-6 text-center pl-0 pr-5">
 
                     <div class="row pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                        PLAYER 2
+                            {{tableEvent.teamTwo.name}}
                         </div>
                     </div>
 
@@ -99,10 +83,7 @@
                             <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                                 <div style="width: auto; height: 300px;">
                                     <p class="statsText2 py-2">
-                                        Cubs batter's box glove force dead ball era, club play. Ball rotation walk off cellar runs 
-                                        mendoza line lineup. Diamond skipper base on balls sacrifice bunt scorecard forkball reliever 
-                                        wild pitch. Backstop rotation diamond shortstop batting average cork fielder's choice stadium. 
-                                        Cellar rainout fan run batted in cycle run club. Extra innings swing shortstop baseball card on deck steal win.
+                                        {{tableEvent.teamTwo.stats}}
                                     </p>
                                 </div>
                             </div>
@@ -112,7 +93,7 @@
                     <!-- COMMENT BOX-->
                     <div class="row pt-2 pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                        COMMENTS FOR PLAYER 2
+                        COMMENTS FOR {{tableEvent.teamTwo.name}}
                         </div>
                     </div>
             
@@ -120,18 +101,16 @@
                     <div class="row px-3 pb-1">
                         <div class="col-12 py-2 event-turf">
                             <ul class="list-group text-left">
-                                <li class="listOne list-group-item">The user comments </li>
-                                <li class="listOne list-group-item">Comments Here</li>
-                                <li class="listOne list-group-item">More comments</li>
-                                <li class="listOne list-group-item">Some more comments</li>
+                                {{#each tableEvent.teamTwo.comments}}
+                                    {{!-- this will probably have to be an array --}}
+                                    <li class="listOne list-group-item">{{this}}</li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
         
                 </div>
             </div>
-            <!-- </div> -->
-        
 
             <div class="col-12">
                 <!-- COMMENT BOX HEADER-->
@@ -146,8 +125,8 @@
                 <form class="text-center pb-2">
                     <div class="form-group ml-1 mr-1 pl-3 pr-3">
                         <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for Player 1!">
-                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for Player 2!">    
+                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{tableEvent.teamOne.name}}!">
+                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{tableEvent.teamTwo.name}}!">
                     </div>
                 </form>
                 <br>
@@ -163,7 +142,7 @@
                     <div class="col-4 text-center">
                     </div>
                     <div class="col-4 text-center">
-                        <img src="assets/images/couchBottom.png" width="280px" >
+                        <img src="assets/images/tableBottom.png" width="280px" >
                     </div>
                     <div class="col-4 text-center">
                     </div>
@@ -176,7 +155,6 @@
 
     </div>
 
-    
     <!-- FOOTER -->
     <footer class="footer pt-3 pb-3">
         <div class="container text-center">
@@ -185,10 +163,3 @@
     </footer>
 
     <script type="text/javascript" src="js/bar.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/bar.js"></script>
-
-  </body>
-</html>
