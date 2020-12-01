@@ -1,0 +1,110 @@
+    <nav class="navbar navbar-dark bg-nav">
+        <a class="navbar-brand pt-0 pb-0"><img src="../public/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondadry my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            <button class="btn btn-secondadry my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
+                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
+            </button>
+        </form>
+    </nav>
+    
+    <div id="main">
+        
+        <!-- TURF SECTION/////////////////////////////////////////////////////////////////////////// -->
+        <div class="row pl-4 pr-4 pt-3">
+            <div class="col-12 text-left">
+                
+                
+
+                <div id="carouselTurfEvents" class="carousel slide pb-2 carouselTop" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        {{!-- according to HandleBars, if the value for the #if statement is false, undefined, null, "", 0, or [], Handlebars will not render the block. --}}
+                        {{#each turfEvents}}
+                            {{#if slideId}}<li data-target="#carouselTurfEvents" data-slide-to="{{slideId}}"></li>{{else}}<li data-target="#carouselTurfEvents" data-slide-to="{{slideId}}" class="active"></li>{{/if}}
+                        {{/each}}
+                        
+                    </ol>
+                    <div class="carousel-inner">
+
+                        {{#each turfEvents}}
+                            {{#if slideId}}<div class="carousel-item">{{else}}<div class="carousel-item active">{{/if}}
+                                <img class="d-block w-100" src="assets/images/tableSlide{{slideId}}.png" alt="slide {{slideId}}">
+                                <div class="carousel-caption d-none d-md-block text-right pr-3 pb-1">
+                                    <h5>{{slideTitle}}</h5>
+                                    <p>{{slideText}}</p>
+                                </div>
+                            </div>
+                        {{/each}}
+
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+                
+                <img src="assets/images/turf.png" width="150px" style="position: relative; margin-top: -68px; z-index: 500;">
+                
+
+                <div class="row">
+                    <div class="col-12 couchEventHeader">
+                        TURF EVENTS
+                    </div>
+                </div>
+            </div>
+        </div>
+                    
+                {{#each turfEvents}}
+
+                    <div class="row my-1" data-id="{{tueID}}">
+                        <div class="col-12 pt-2 pb-2 event-turf">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="event{{tueID}}-tab" data-toggle="tab" href="#event{{tueID}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="desc{{tueID}}-tab" data-toggle="tab" href="#desc{{tueID}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{tueID}}" role="tabpanel" aria-labelledby="event{{tueID}}-tab">
+                                    {{eventIcon}}
+                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                                    <p>&nbsp;{{eventTitle}}</p>
+                                </div>
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{tueID}}" role="tabpanel" aria-labelledby="desc{{tueID}}-tab">
+                                    {{playerIcon1}}
+                                    {{playerIcon2}}
+                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
+                                    <span>{{eventVs}}<br>{{eventTime}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {{/each}}
+
+        <div class="row pl-4 pr-4">
+            <div class="col-12 couchEventHeader">
+                <br>
+            </div>
+            <div class="col-12 footImage">
+                <img src="assets/images/turfBottom.png" width="150px">
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer pt-3 pb-3">
+        <div class="container text-center">
+            <span>TOGETHER:AGAINST 2020</span>
+        </div>
+    </footer>
