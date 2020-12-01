@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <title>MEMBER</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,42 +10,101 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link href="../public/stylesheets/login.css" rel="stylesheet">
-</head>
+  </head>
 
-<body class="container-fluid pl-0 pr-0">
-    
+  <body class="container-fluid pl-0 pr-0">
+      
     <nav class="navbar navbar-dark bg-nav">
-        <a class="navbar-brand pt-0 pb-0"><img src="../public/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-secondadry my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-          <button class="btn btn-secondadry my-2 my-sm-0 ml-2" type="submit"><i class="far fa-user-circle"></i></button>
+      <a class="navbar-brand pt-0 pb-0"><img src="../public/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit"><i class="far fa-user-circle"></i></button>
       </form>
     </nav>
 
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <div class="col-6 pt-5">
+        <div class="col-8 pt-5">
           <h2>Welcome!</h2>
           <br/>
-          <p>Thanks for stopping by! Visit the main event hub or select a specific event type.
-            <a href="/">here</a></p>
+          <p>Thanks for stopping by! Visit the main event hub, select a specific event type, or create one of your own!</p>
+          <button class="btn btn-light w-100 mb-1">All Events</button>
+          <button class="btn btn-light w-100 mb-1">Couch Events</button>
+          <button class="btn btn-light w-100 mb-1">Table Events</button>
+          <button class="btn btn-light w-100 mb-1">Turf Events</button>
+          <!-- <button class="btn btn-light w-100 mb-1">Create Event</button> -->
+            
+          <button class="btn btn-warning w-100 mb-1" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
+            Create Event
+          </button>
+            
+          <div class="collapse" id="collapseMenu">
+            <div class="card card-body">
+              <form>
+                <div class="form-group">
+                  <label for="eventTypeSelect">Event Type</label>
+                  <select class="form-control" id="eventTypeSelect">
+                    <option>Couch Event</option>
+                    <option>Table Event</option>
+                    <option>Turf Event</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="eventTitle">Event Title</label>
+                  <input type="text" class="form-control" id="eventTitle" placeholder="Event Title">
+                </div>
+                <div class="form-group">
+                  <label for="playerOneName">Opponent #1</label>
+                  <input type="text" class="form-control" id="playerOneName" placeholder="Player Name/Team Name">
+                </div>
+                <div class="form-group">
+                  <label for="playerOneStats">Opponent #1 Stats</label>
+                  <textarea class="form-control" id="playerOneStats" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="playerTwoName">Opponent #2</label>
+                  <input type="text" class="form-control" id="playerTwoName" placeholder="Player Name/Team Name">
+                </div>
+                <div class="form-group">
+                  <label for="playerTwoStats">Opponent #2 Stats</label>
+                  <textarea class="form-control" id="playerTwoStats" rows="3"></textarea>
+                </div>
+                <button class="btn btn-warning" type="submit">Generate!</button>
+              </form>            
+            </div>
+          </div>
+
+          <div class="couchEventHeader w-100 pl-3">
+              YOUR EVENTS
+          </div>
+          <ul class="pt-1">
+            <li>
+              Event number 1
+              <button class="btn btn-danger float-right" type="submit">Remove</button>
+              <button class="btn btn-secondary float-right mr-1" type="submit">Conclude</button>
+              <button class="btn btn-light float-right mr-1" type="submit">View</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
+    <div class="footfix w-100">
+      &nbsp;
+    </div>
 
     <footer class="footer">
-        <div class="container text-center">
-            <span>TOGETHER:AGAINST 2020</span>
+        <div class="text-center">
+          <span>TOGETHER:AGAINST 2020</span>
         </div>
     </footer>
-    
+      
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/members.js"></script>
 
-</body>
+  </body>
 
 </html>
