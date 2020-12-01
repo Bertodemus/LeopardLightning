@@ -3,7 +3,7 @@ const eventController = {
   all (req, res) {
     Model.Event.find({})
       .populate("comment")
-      .exec((err, event) => res.json(event))
+      .exec((err, event) => res.json(event));
   },
   byID (req, res) {
     const id = req.params.id;
