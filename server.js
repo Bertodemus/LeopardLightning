@@ -23,7 +23,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(routes);
 
 //***handlebars code, feel free to comment out if you need to work on the HTML //DS-11/24
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -33,6 +32,7 @@ app.set("view engine", "handlebars");
 // app.use(routes);
 
 // Requiring our routes
+app.use(routes);
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
