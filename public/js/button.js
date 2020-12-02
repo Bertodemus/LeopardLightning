@@ -1,14 +1,15 @@
 $(document).ready(() => {
-    $(".create-event").on("submit", function(event) {
+    $(".create-event").on("click", function(event) {
         event.preventDefault();
     
         let newEvent = {
           title: $("#eventTitle").val().trim(),
           category: $("#eventTypeSelect").val(),
+          description: $("#eventDescription").val().trim(),
           team_one_name: $("#playerOneName").val().trim(),
           team_one_stat: $("#playerOneStats").val().trim(),
           team_two_name: $("#playerTwoName").val().trim(),
-          team_two_stat: $("playerTwoStats").val().trim()
+          team_two_stat: $("#playerTwoStats").val().trim()
         };
     
         // Send the POST request.
@@ -19,7 +20,7 @@ $(document).ready(() => {
           function() {
             console.log("created new event");
             // Reload the page to get the updated list
-            location.reload();
+            //location.reload();
           }
         );
       });
@@ -47,10 +48,13 @@ $(document).ready(() => {
         }).then(( function() {
             team_votes = event.team_one_votes;
             team_votes++;
+            const updateEvent = {
+              team_one_votes: team_votes
+            };
             
             $.ajax("/event/" + id, {
                 type: "PUT",
-                team_one_votes = team_votes
+                data: updateEvent
             }).then(function() {
                 console.log("updated event");
             })
@@ -79,10 +83,13 @@ $(document).ready(() => {
         }).then(( function() {
             team_votes = event.team_two_votes;
             team_votes++;
+            const updateEvent = {
+              team_two_votes: team_votes
+            };
             
             $.ajax("/event/" + id, {
                 type: "PUT",
-                team_two_votes = team_votes
+                data: updateEvent
             }).then(function() {
                 console.log("updated event");
             })

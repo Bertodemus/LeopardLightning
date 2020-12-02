@@ -44,13 +44,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   );
 
-  Event.associate = models => {
-    Event.belongsToMany(models.Comment, {
-      through: "event_comment",
-      as: "comments",
-      foreignKey: "event_id"
-    });
-  };
 
   return Event;
 };

@@ -1,5 +1,5 @@
     <nav class="navbar navbar-dark bg-nav">
-        <a class="navbar-brand pt-0 pb-0"><img src="../public/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+        <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
@@ -40,6 +40,10 @@
                   <input type="text" class="form-control" id="eventTitle" placeholder="Event Title">
                 </div>
                 <div class="form-group">
+                  <label for="eventDescription">Description</label>
+                  <input type="text" class="form-control" id="eventDescription" placeholder="Event Description">
+                </div>
+                <div class="form-group">
                   <label for="playerOneName">Opponent #1</label>
                   <input type="text" class="form-control" id="playerOneName" placeholder="Player Name/Team Name">
                 </div>
@@ -55,7 +59,7 @@
                   <label for="playerTwoStats">Opponent #2 Stats</label>
                   <textarea class="form-control" id="playerTwoStats" rows="3"></textarea>
                 </div>
-                <button class="btn btn-warning" type="submit">Generate!</button>
+                <button class="btn btn-warning create-event" type="submit">Generate!</button>
               </form>            
             </div>
           </div>
@@ -88,4 +92,5 @@
         </div>
     </footer>
     
-    <script type="text/javascript" src="js/members.js"></script>
+    <script type="text/javascript" src="/js/members.js"></script>
+    <script type="text/javascript" src="/js/button.js"></script>
