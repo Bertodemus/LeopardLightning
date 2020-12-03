@@ -16,10 +16,17 @@
           {{userName}}
           <br/>
           <p>Thanks for stopping by! Visit the main event hub, select a specific event type, or create one of your own!</p>
+          <!-- Doesnt redirect to anything at the moment -->
           <button class="btn btn-light w-100 mb-1">All Events</button>
-          <button class="btn btn-light w-100 mb-1">Couch Events</button>
-          <button class="btn btn-light w-100 mb-1">Table Events</button>
-          <button class="btn btn-light w-100 mb-1">Turf Events</button>          
+           <a href ="/couch-event">
+            <button class="btn btn-light w-100 mb-1">Couch Events</button>
+          </a>
+          <a href ="/table-event">
+            <button class="btn btn-light w-100 mb-1">Table Events</button>
+          </a>
+          <a href ="/turf-event">
+            <button class="btn btn-light w-100 mb-1">Turf Events</button>  
+          </a>        
           <button class="btn btn-warning w-100 mb-1" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
             Create Event
           </button>

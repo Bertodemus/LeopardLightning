@@ -17,6 +17,13 @@ nav {
   font-size: 3rem;
 }
 
+.navbar-nav,
+.nav-link {
+  color: #f7ae3f !important;
+  font-family: 'Questrial', sans-serif;
+  font-size: 1rem;
+}
+
 footer {
   color: #f7ae3f;
   font-family: 'Questrial', sans-serif;
