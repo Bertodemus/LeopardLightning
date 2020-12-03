@@ -1,15 +1,18 @@
 const Model = require("../models");
+
 const eventController = {
-  all (req, res) {
-    Model.Event.find({})
-      .populate("comment")
-      .exec((err, event) => res.json(event));
+  findAll (req, res) {
+    Model.Event.findAll({}).then(function(event){
+      const hbsObject = {
+        events: event
+      };
+      console.log(event);
+      res.json(event);
+      // res.render("index", hbsObject);
+    });
   },
   byID (req, res) {
     const id = req.params.id;
-    Model.Event.findOne({_id: id})
-    Model.Event.populate("comment")
-    .exec((err, event) => res.json(event));
   },
   create (req, res) {
     Model.Event.create(req.body).then(function(event) {

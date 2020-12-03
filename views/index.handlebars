@@ -21,36 +21,32 @@
                         </div>
                     </div>
 
-                {{#each couchEvents}}
-
-                    <div class="row my-1" data-id="{{ceID}}">
+                {{!-- {{#each events}} --}}
+                    {{!-- {{#with category}} --}}
+                    {{!-- {{Couch Event}} --}}
+                    <div class="row my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="event{{ceID}}-tab" data-toggle="tab" href="#event{{ceID}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="desc{{ceID}}-tab" data-toggle="tab" href="#desc{{ceID}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{ceID}}" role="tabpanel" aria-labelledby="event{{ceID}}-tab">
-                                    {{eventIcon}}
+                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
                                     <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px">
-                                    <p>&nbsp;{{eventTitle}}</p>
+                                    <p>&nbsp;{{events.title}}</p>
                                 </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{ceID}}" role="tabpanel" aria-labelledby="desc{{ceID}}-tab">
-                                    {{playerIcon1}}
-                                    {{playerIcon2}}
-                                    <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px">
-                                    <span>{{eventVs}}<br>{{eventTime}}</span>
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
+                                    <p>&nbsp;{{events.description}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                {{/each}}
+                    {{!-- {{/with}} --}}
+                {{!-- {{/each}} --}}
 
 
                 <div class="row">
