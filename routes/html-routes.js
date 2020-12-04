@@ -1,39 +1,15 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
-<<<<<<< HEAD
-const router = require("./eventRoutes");
-const eventController = require("../controllers/eventController.js");
-=======
 const controller = require("../controllers/userController");
 const router = require("../routes/eventRoutes");
 const event = require("../controllers/eventController.js");
 
->>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-<<<<<<< HEAD
-//  const events = {
-//   title: "Stuff",
-//   description: "More stuff",
-//   category: "Couch Event"
-// };
-
-module.exports = function(app) {   
-  app.get("/", async function (req, res)  {
-    // If the user already has an account send them to the members page;
-    if (req.user) {
-      res.redirect("members", {layout: "auth.handlebars"});
-    }
-    const api = await eventController.findAll();
-    console.log("console da api" + api);
-    res.render("index", { layout: "main.handlebars", events: api });
-  });
-=======
 module.exports = function(app) {
   app.get("/", router);
->>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
@@ -57,7 +33,7 @@ module.exports = function(app) {
   app.get("/event/Couch", router);
   app.get("/event/Table", router);
 
-  app.get("/event/Couch/1", router);
+  app.get("/event/:type/:id", router);
 
 
   // app.get("/couch-event", (req, res) => {

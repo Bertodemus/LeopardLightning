@@ -1,27 +1,4 @@
 const Model = require("../models");
-<<<<<<< HEAD
-const express = require("express");
-const router = express.Router();
-
-const eventController = {
-  findAll: async function(res)  {
-    let events = [];
-    // router.get("/event", function(req, res) {
-    //   response.send('hey you');
-    await Model.Event.findAll({}).then(function(event){
-       for (var i = 0; i < event.length; i++) {
-         events.push(event[i]);
-       }
-      console.log(event);
-    // });
-  });
-  res.send(events);
-  console.log(events);
-  console.log("stuff");
-  },
-  byID (req, res) {
-    const id = req.params.id;
-=======
 
 const eventController = {
   all: async function(req, res) {
@@ -41,7 +18,6 @@ const eventController = {
       res.render(id.split(' ').join('_'), { layout: "main.handlebars", dbevent: dbevent });
     });
     // Model.Event.populate("comment").exec((err, event) => res.json(event));
->>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
   },
 
   byTYPE: async function(req, res) {

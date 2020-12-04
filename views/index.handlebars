@@ -20,15 +20,8 @@
                             <a class="indexLink" href="/event/Couch" style="color: #f7ae3f">COUCH EVENTS</a>
                         </div>
                     </div>
-<<<<<<< HEAD
-
-                {{!-- {{#each events}} --}}
-                    {{!-- {{#with category}} --}}
-                    {{!-- {{Couch Event}} --}}
-=======
                 {{#each dbevent}}
                     {{#ifCond category "Couch Event"}}
->>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
                     <div class="row my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -41,13 +34,6 @@
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
-<<<<<<< HEAD
-                                    <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px">
-                                    <p>&nbsp;{{events.title}}</p>
-                                </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
-                                    <p>&nbsp;{{events.description}}</p>
-=======
                                     {{eventIcon}}
                                     {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
                                     <p>&nbsp;{{title}}</p>
@@ -58,20 +44,14 @@
                                     {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
                                     <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
                                     <span>{{description}}</span>
->>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
                                 </div>
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-                    {{!-- {{/with}} --}}
-                {{!-- {{/each}} --}}
-=======
                     {{!-- {{else}}
                         {{v1}} is not equal to {{v2}} --}}
                     {{/ifCond}}
                 {{/each}}
->>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
 
 
                 <div class="row">
