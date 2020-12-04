@@ -137,8 +137,8 @@
                 <form class="text-center pb-2">
                     <div class="form-group ml-1 mr-1 pl-3 pr-3">
                         <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{dbevent.team_one_name}}!">
-                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{dbevent.team_two_name}}!">
+                        <input class="btn btn-warning float-left ml-5 px-5" id="vote-one" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_one_name}}!">
+                        <input class="btn btn-warning float-right mr-5 px-5" id="vote-two" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_two_name}}!">
                     </div>
                 </form>
                 <br>
