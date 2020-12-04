@@ -1,6 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 const router = require("./eventRoutes");
+const eventController = require("../controllers/eventController.js");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -12,12 +13,14 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 // };
 
 module.exports = function(app) {   
-  app.get("/", (req, res) => {
+  app.get("/", async function (req, res)  {
     // If the user already has an account send them to the members page;
     if (req.user) {
       res.redirect("members", {layout: "auth.handlebars"});
     }
-    res.render("index", { layout: "main.handlebars", events: events });
+    const api = await eventController.findAll();
+    console.log("console da api" + api);
+    res.render("index", { layout: "main.handlebars", events: api });
   });
 
   app.get("/login", (req, res) => {

@@ -1,15 +1,22 @@
 const Model = require("../models");
+const express = require("express");
+const router = express.Router();
 
 const eventController = {
-  findAll (req, res) {
-    Model.Event.findAll({}).then(function(event){
-      const hbsObject = {
-        events: event
-      };
+  findAll: async function(res)  {
+    let events = [];
+    // router.get("/event", function(req, res) {
+    //   response.send('hey you');
+    await Model.Event.findAll({}).then(function(event){
+       for (var i = 0; i < event.length; i++) {
+         events.push(event[i]);
+       }
       console.log(event);
-      res.json(event);
-      // res.render("index", hbsObject);
-    });
+    // });
+  });
+  res.send(events);
+  console.log(events);
+  console.log("stuff");
   },
   byID (req, res) {
     const id = req.params.id;
