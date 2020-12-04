@@ -35,7 +35,7 @@ module.exports = function(app) {
 
   app.get("/event/:type/:id", router);
 
-
+  app.get("/member-home", router);
   // app.get("/couch-event", (req, res) => {
   //   res.render("couch_event", {layout: "main.handlebars"});
   // });
