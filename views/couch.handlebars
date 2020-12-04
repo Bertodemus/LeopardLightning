@@ -27,141 +27,109 @@
             <div class="col-6 text-center my-auto">
                 <h1 class="eventTitleBig">{{title}}</h1>
             </div>
-
             <div class="col-6 text-center">
                 <img src="/assets/images/couchanglefull.png" width="500px" >
             </div>
-
-            <!-- EVENT NUMBER ONE ROWS-->
-            <!-- EVENT NUMBER ONE HEADER-->
-            <div class="row eventOne">
-                <div class="col-6 text-center pl-5 pr-0">
-                    <div class="row pb-1 px-3">
-                        <div class="col-12 couchEventHeader">
-                            {{dbevent.team_one_name}}
-                        </div>
-                        {{!-- this is here for the progressbar.js  --}}
-                        <div id="oppon1"></div>
-                    </div>
-
-                    <!-- STAT BOX-->
-                    <div class="row eventStats px-3">
-                        <div class="col-12 py-2 event-turf">
-                            <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
-                                <div style="width: auto; height: 300px;">
-                                    <p class="statsText1 py-2 px-2">
-                                        {{dbevent.team_one_stat}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-            
-                    <!-- COMMENT HEADER-->
-                    <div class="row pb-1 pt-2 px-3">
-                        <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{dbevent.team_one_name}}
-
-                        </div>
-                    </div>
-        
-                    <!-- USER COMMENTS-->
-                    <div class="row px-3 pb-1">
-                        <div class="col-12 py-2 event-turf">
-                            <ul class="list-group text-left">
-                                {{#each couchEvent.teamOne.comments}}
-                                    {{!-- this will probably have to be an array --}}
-                                    <li class="listOne list-group-item">{{this}}</li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            
-                <!-- EVENT NUMBER TWO ROWS-->
-                <!-- EVENT NUMBER TWO HEADER-->
-                <div class="col-6 text-center pl-0 pr-5">
-
-                    <div class="row pb-1 px-3">
-                        <div class="col-12 couchEventHeader">
-                            {{dbevent.team_two_name}}
-                        </div>
-                    </div>
-
-                    <!-- STAT BOX-->
-                    <div class="row eventStats px-3">
-                        <div class="col-12 py-2 event-turf">
-                            <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
-                                <div style="width: auto; height: 300px;">
-                                    <p class="statsText2 py-2">
-                                        {{dbevent.team_two_stat}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- COMMENT BOX-->
-                    <div class="row pt-2 pb-1 px-3">
-                        <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{dbevent.team_two_name}}
-                        </div>
-                    </div>
-            
-                    <!-- USER COMMENTS-->
-                    <div class="row px-3 pb-1">
-                        <div class="col-12 py-2 event-turf">
-                            <ul class="list-group text-left">
-                                {{#each couchEvent.teamTwo.comments}}
-                                    {{!-- this will probably have to be an array --}}
-                                    <li class="listOne list-group-item">{{this}}</li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="col-12">
-                <!-- COMMENT BOX HEADER-->
-                <div class="row ml-1 mr-1 pl-3 pr-3 pb-1 pt-1">
-                    <div class="col-12 text-center couchEventHeader">
-                        BACK UP YOUR PROJECTED WINNER
-                    </div>
-                </div>
-                
-
-                <!-- COMMENT BOX-->
-                <form class="text-center pb-2">
-                    <div class="form-group ml-1 mr-1 pl-3 pr-3">
-                        <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{dbevent.team_one_name}}!">
-                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{dbevent.team_two_name}}!">
-                    </div>
-                </form>
-                <br>
-
-
-                <!-- PICTURES-->
-                <div class="row ml-1 mr-1 pl-3 pr-3 mb-3">
-                    <div class="col-12 couchEventHeader">
-                        <br>
-                    </div>
-                </div>
-                
-            </div>
-
-
         </div>
 
+        <!-- EVENT NUMBER ONE ROWS-->
+        <!-- EVENT NUMBER ONE HEADER-->
+        <div class="row eventOne">
 
-    </div>
+            <div class="col-6 text-center pl-4 pr-0">
 
-<div id="disqus_thread"></div>
-<script>
+                <div class="row pb-1 px-3">
+                    <div class="col-12 couchEventHeader">
+                        {{dbevent.team_one_name}}
+                    </div>
+                    <div id="oppon1"></div>
+                </div>
+            
+
+                <!-- STAT BOX-->
+                <div class="row eventStats px-3">
+                    <div class="col-12 py-2 event-turf">
+                        <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
+                            {{!-- <div style="width: auto; height: 300px;"> --}}
+                                <p class="statsText1 py-2 px-2">
+                                    {{dbevent.team_one_stat}}
+                                </p>
+                            {{!-- </div> --}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6 text-center pr-4 pl-0">
+
+                <div class="row pb-1 px-3">
+                    <div class="col-12 couchEventHeader">
+                        {{dbevent.team_two_name}}
+                    </div>
+                    <div id="oppon1"></div>
+                </div>
+            
+
+                <!-- STAT BOX-->
+                <div class="row eventStats px-3">
+                    <div class="col-12 py-2 event-turf">
+                        <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
+                            {{!-- <div style="width: auto; height: 300px;"> --}}
+                                <p class="statsText1 py-2 px-2">
+                                    {{dbevent.team_two_stat}}
+                                </p>
+                            {{!-- </div> --}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+            <!-- COMMENT BOX HEADER-->
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12 text-center couchEventHeader">
+                    BACK UP YOUR PROJECTED WINNER
+                </div>
+            </div>
+         
+            <!-- COMMENT BOX-->
+            <div class="form-group pl-3 pr-3 pb-1 pt-1">
+                <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for Player 1!" id="vote-one">
+                <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for Player 2!" id="vote-two"> 
+                <br>
+            </div>
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12 couchEventHeader">
+                    <br>
+                </div>
+            </div>            
+            
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12">
+                    <div id="disqus_thread"></div>
+                </div>
+            </div>                             
+            <br>
+
+            <!-- PICTURES-->
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12 couchEventHeader">
+                    <br>
+                </div>
+            </div>
+
+    <!-- FOOTER -->
+    <footer class="footer pt-3 pb-3">
+        <div class="container text-center">
+            <span>TOGETHER:AGAINST 2020</span>
+        </div>
+    </footer>
+
+
+
+    <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
@@ -171,20 +139,13 @@
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://leopardlightning.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://leopardlightning.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-    <!-- FOOTER -->
-    <footer class="footer pt-3 pb-3">
-        <div class="container text-center">
-            <span>TOGETHER:AGAINST 2020</span>
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="js/bar.js"></script>
+    
