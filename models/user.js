@@ -28,5 +28,11 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+  //Add associate to have many events belong to a user
+  User.associate = function(models) {
+    User.hasMany(models.Event, {
+      onDelete: "cascade"
+    });
+  };
   return User;
 };

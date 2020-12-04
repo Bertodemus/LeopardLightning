@@ -22,7 +22,7 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.render("members", {layout: "auth.handlebars"});
+    res.render("members", {username: req.user.id, layout: "auth.handlebars"});
   });
 
   app.get("/signup", (req, res) => {
@@ -33,7 +33,7 @@ module.exports = function(app) {
   app.get("/event/Couch", router);
   app.get("/event/Table", router);
 
-  app.get("/event/Couch/1", router);
+  app.get("/event/:type/:id", router);
 
 
   // app.get("/couch-event", (req, res) => {
@@ -58,6 +58,10 @@ module.exports = function(app) {
 
   app.get("/turf", (req, res) => {
     res.render("turf", {layout: "main.handlebars"});
+  });
+
+  app.get("/member-home", (req, res) => {
+    res.render("index", {layout: "main.handlebars"});
   });
 
 };
