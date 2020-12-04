@@ -13,13 +13,9 @@
             </div>
         </div>
 
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
-                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
-            </button>
-        </form>
+           <a href="/login">
+            {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
+        </a>
     </nav>
 
     <div id="main">
@@ -137,12 +133,19 @@
                 <form class="text-center pb-2">
                     <div class="form-group ml-1 mr-1 pl-3 pr-3">
                         <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{dbevent.team_one_name}}!">
-                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{dbevent.team_two_name}}!">
+                        <input class="btn btn-warning float-left ml-5 px-5" id="vote-one" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_one_name}}!">
+                        <input class="btn btn-warning float-right mr-5 px-5" id="vote-two" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_two_name}}!">
                     </div>
                 </form>
                 <br>
 
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{dbevent.team_one_votes}}" aria-valuenow={{dbevent.team_one_votes}} aria-valuemin="0" aria-valuemax="100">{{dbevent.team_one_name}}: {{dbevent.team_one_vote}}</div>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: {{dbevent.team_two_votes}}" aria-valuenow={{dbevent.team_two_votes}} aria-valuemin="0" aria-valuemax="100">{{dbevent.team_two_name}}: {{dbevent.team_two_vote}}</div>
+                </div>
 
                 <!-- PICTURES-->
                 <div class="row ml-1 mr-1 pl-3 pr-3 mb-3">

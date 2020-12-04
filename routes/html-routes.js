@@ -30,12 +30,12 @@ module.exports = function(app) {
   });
 
 
-  app.get("/event/Couch", router);
-  app.get("/event/Table", router);
+  app.get("/event/couch", router);
+  app.get("/event/table", router);
 
   app.get("/event/:type/:id", router);
 
-
+  app.get("/member-home", router);
   // app.get("/couch-event", (req, res) => {
   //   res.render("couch_event", {layout: "main.handlebars"});
   // });
