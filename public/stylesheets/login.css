@@ -1,89 +1,67 @@
-/* form.signup,
-form.login {
-  margin-top: 50px;
-} */
-
 body {
       background-image: url("../assets/images/iconsTogether2Long.png");
+}
+  
+nav {
+  color: #f7ae3f;
+  font-family: 'Questrial', sans-serif;
+  font-size: 3rem;
+}
 
-  }
-  
-  /* #main {
-    background-image: url("../assets/images/iconsTogether2Long.png");
-  } */
-  
-  nav {
-    color: #f7ae3f;
-    font-family: 'Questrial', sans-serif;
-    font-size: 3rem;
-  }
-  
-  footer {
-    color: #f7ae3f;
-    font-family: 'Questrial', sans-serif;
-    font-size: 1rem;
-    background-color: #415a5f;
-  }
-  
-  div.event-turf {
-    /* border: 1px solid rgb(56, 56, 56);
-    border-radius: 2px; */
-    background-color: rgba(236, 236, 236, 0.685);
-  }
-  
-  .bg-nav {
-    background-color: #415a5f;
-  }
-  
-  div .tab-pane {
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .couchEventHeader {
-    color: #f7ae3f;
-    background-color: #415a5fb6;
-  }
-  
-  .couchEventFooter {
-    background-color: #415a5fb6;
-  }
-  
-  .carouselTop {
-    margin-bottom: -20px;
-  }
-  
-  .carousel-caption {
-    color: #f7ae3f;
-    background: linear-gradient(to right, #31313100,  #415a5fc0);
-  }
-  
-  .footImage {
-    margin-top: -3px;
-  }
+footer {
+  color: #f7ae3f;
+  font-family: 'Questrial', sans-serif;
+  font-size: 1rem;
+  background-color: #415a5f;
+}
 
-  .footfix {
-    margin-bottom: 60px;
-  }
+div.event-turf {
+  background-color: rgba(236, 236, 236, 0.685);
+}
 
-  .footer {
-    clear: both;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
+.bg-nav {
+  background-color: #415a5f;
+}
 
-  }
+div .tab-pane {
+  background-color: rgb(255, 255, 255);
+}
 
-  /* .footer {
-    clear: both;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    height: 60px;
-    line-height: 60px;
-  } */
+.couchEventHeader {
+  color: #f7ae3f;
+  background-color: #415a5fb6;
+}
 
-   li {
-     list-style-type: none;
-   }
+.couchEventFooter {
+  background-color: #415a5fb6;
+}
+
+.carouselTop {
+  margin-bottom: -20px;
+}
+
+.carousel-caption {
+  color: #f7ae3f;
+  background: linear-gradient(to right, #31313100,  #415a5fc0);
+}
+
+.footImage {
+  margin-top: -3px;
+}
+
+.footfix {
+  margin-bottom: 60px;
+}
+
+.footer {
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+li {
+  list-style-type: none;
+}

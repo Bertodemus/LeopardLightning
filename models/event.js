@@ -43,7 +43,20 @@ module.exports = function(sequelize, DataTypes) {
       freezeTableName: true
     }
   );
+  //Add associations for User and Comments
+  Event.associate = function(models) {
+    Event.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
+  Event.associate = function(models) {
+    Event.hasMany(models.Comment, {
+      onDelete: "cascade"
+    });
+  };
 
   return Event;
 };
