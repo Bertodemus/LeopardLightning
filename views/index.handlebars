@@ -1,179 +1,194 @@
-    <nav class="navbar navbar-dark bg-nav">
-        <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
-                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
-            </button>
-        </form>
-    </nav>
+<nav class="navbar navbar-dark bg-nav">
+    <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png"
+            width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+        <a href="/login">
+            {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
+        </a>
+</nav>
 
-    <div id="main">
+<div id="main">
 
-        <!-- COUCH SECTION/////////////////////////////////////////////////////////////////////////// -->
-        <div class="row pt-3 pb-3">
-            <div class="col-4 text-center pl-5">
-                <img src="assets/images/couch.png" width="280px">
-                    <div class="row">
-                        <div class="col-12 couchEventHeader">
-                            <a class="indexLink" href="/event/couch" style="color: #f7ae3f">COUCH EVENTS</a>
+    <!-- COUCH SECTION/////////////////////////////////////////////////////////////////////////// -->
+    <div class="row pt-3 pb-3">
+        <div class="col-4 text-center pl-5">
+            <img src="assets/images/couch.png" width="280px">
+            <div class="row">
+                <div class="col-12 couchEventHeader">
+                    <a class="indexLink" href="/event/couch" style="color: #f7ae3f">COUCH EVENTS</a>
+                </div>
+            </div>
+            {{#each dbevent}}
+            {{#ifCond category "Couch Event"}}
+            <div class="row my-1" data-id="{{id}}">
+                <div class="col-12 pt-2 pb-2 event-turf">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}"
+                                role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab"
+                                aria-controls="Description" aria-selected="false">Description</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
+                            aria-labelledby="event{{id}}-tab">
+                            <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
+                            {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                            <a href="/event/couch/{{id}}">
+                                <p>&nbsp;{{title}}</p>
+                            </a>
                         </div>
-                    </div>
-                {{#each dbevent}}
-                    {{#ifCond category "Couch Event"}}
-                    <div class="row my-1" data-id="{{id}}">
-                        <div class="col-12 pt-2 pb-2 event-turf">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
-                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
-                                    <a href="/event/couch/{{id}}"><p>&nbsp;{{title}}</p></a>
-                                </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                                    <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                        <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
+                            aria-labelledby="desc{{id}}-tab">
+                            <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                            <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                            {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
                                     <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                                    <span>{{description}}</span>
-                                </div>
-                            </div>
+                            <span>{{description}}</span>
                         </div>
-                    </div>
-                    {{!-- {{else}}
-                        {{v1}} is not equal to {{v2}} --}}
-                    {{/ifCond}}
-                {{/each}}
-
-
-                <div class="row">
-                    <div class="col-12 couchEventHeader">
-                        <br>
-                    </div>
-                    <div class="col-12">
-                        <img src="assets/images/couchBottom.png" width="280px">
                     </div>
                 </div>
             </div>
-
-            <!-- TABLE SECTION/////////////////////////////////////////////////////////////////////////// -->
-            <div class="col-4 text-center pl-4 pr-4">
-                <img src="assets/images/table.png" width="280px">
-                    <div class="row">
-                        <div class="col-12 couchEventHeader">
-                            <a class="indexLink" href="/event/table" style="color: #f7ae3f">TABLE EVENTS</a>
-                        </div>
-                    </div>
-
-                {{#each dbevent}}
-                    {{#ifCond category "Table Event"}}
-                    <div class="row my-1" data-id="{{id}}">
-                        <div class="col-12 pt-2 pb-2 event-turf">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
-                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
-                                    <a href="/event/table/{{id}}"><p>&nbsp;{{title}}</p></a>
-                                </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                                    <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                                    <span>{{description}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{!-- {{else}}
+            {{!-- {{else}}
                         {{v1}} is not equal to {{v2}} --}}
-                    {{/ifCond}}
-                {{/each}}
+            {{/ifCond}}
+            {{/each}}
 
-                <div class="row">
-                    <div class="col-12 couchEventHeader">
-                        <br>
-                    </div>
-                    <div class="col-12">
-                        <img src="assets/images/tableBottom.png" width="280px">
-                    </div>
+
+            <div class="row">
+                <div class="col-12 couchEventHeader">
+                    <br>
+                </div>
+                <div class="col-12">
+                    <img src="assets/images/couchBottom.png" width="280px">
                 </div>
             </div>
-
-
-            <!-- TURF SECTION/////////////////////////////////////////////////////////////////////////// -->
-            <div class="col-4 text-center pr-5">
-                <img src="assets/images/turf.png" width="280px">
-                    <div class="row">
-                        <div class="col-12 couchEventHeader">
-                            <a class="indexLink" href="/turf-event" style="color: #f7ae3f">TURF EVENTS</a>
-                        </div>
-                    </div>
-
-                {{#each dbevent}}
-                    {{#ifCond category "Turf Event"}}
-                    <div class="row my-1" data-id="{{id}}">
-                        <div class="col-12 pt-2 pb-2 event-turf">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
-                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
-                                    <a href="/event/turf/{{id}}"><p>&nbsp;{{title}}</p></a>
-                                </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                                    <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                                    <span>{{description}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{!-- {{else}}
-                        {{v1}} is not equal to {{v2}} --}}
-                    {{/ifCond}}
-                {{/each}}
-
-                <div class="row">
-                    <div class="col-12 couchEventHeader">
-                        <br>
-                    </div>
-                    <div class="col-12">
-                        <img src="assets/images/turfBottom.png" width="280px">
-                    </div>
-                </div>
-            </div>      
-
         </div>
+
+        <!-- TABLE SECTION/////////////////////////////////////////////////////////////////////////// -->
+        <div class="col-4 text-center pl-4 pr-4">
+            <img src="assets/images/table.png" width="280px">
+            <div class="row">
+                <div class="col-12 couchEventHeader">
+                    <a class="indexLink" href="/event/table" style="color: #f7ae3f">TABLE EVENTS</a>
+                </div>
+            </div>
+
+            {{#each dbevent}}
+            {{#ifCond category "Table Event"}}
+            <div class="row my-1" data-id="{{id}}">
+                <div class="col-12 pt-2 pb-2 event-turf">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}"
+                                role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab"
+                                aria-controls="Description" aria-selected="false">Description</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
+                            aria-labelledby="event{{id}}-tab">
+                            <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
+                            {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                            <a href="/event/table/{{id}}">
+                                <p>&nbsp;{{title}}</p>
+                            </a>
+                        </div>
+                        <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
+                            aria-labelledby="desc{{id}}-tab">
+                            <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                            <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                            {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
+                            <span>{{description}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- {{else}}
+                        {{v1}} is not equal to {{v2}} --}}
+            {{/ifCond}}
+            {{/each}}
+
+            <div class="row">
+                <div class="col-12 couchEventHeader">
+                    <br>
+                </div>
+                <div class="col-12">
+                    <img src="assets/images/tableBottom.png" width="280px">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- TURF SECTION/////////////////////////////////////////////////////////////////////////// -->
+        <div class="col-4 text-center pr-5">
+            <img src="assets/images/turf.png" width="280px">
+            <div class="row">
+                <div class="col-12 couchEventHeader">
+                    <a class="indexLink" href="/turf-event" style="color: #f7ae3f">TURF EVENTS</a>
+                </div>
+            </div>
+
+            {{#each dbevent}}
+            {{#ifCond category "Turf Event"}}
+            <div class="row my-1" data-id="{{id}}">
+                <div class="col-12 pt-2 pb-2 event-turf">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}"
+                                role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab"
+                                aria-controls="Description" aria-selected="false">Description</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
+                            aria-labelledby="event{{id}}-tab">
+                            <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
+                            {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                            <a href="/event/turf/{{id}}">
+                                <p>&nbsp;{{title}}</p>
+                            </a>
+                        </div>
+                        <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
+                            aria-labelledby="desc{{id}}-tab">
+                            <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                            <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                            {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
+                            <span>{{description}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- {{else}}
+                        {{v1}} is not equal to {{v2}} --}}
+            {{/ifCond}}
+            {{/each}}
+
+            <div class="row">
+                <div class="col-12 couchEventHeader">
+                    <br>
+                </div>
+                <div class="col-12">
+                    <img src="assets/images/turfBottom.png" width="280px">
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
 
-    <footer class="footer pt-3 pb-3">
-        <div class="container text-center">
-            <span>TOGETHER:AGAINST 2020</span>
-        </div>
-    </footer>
+<footer class="footer pt-3 pb-3">
+    <div class="container text-center">
+        <span>TOGETHER:AGAINST 2020</span>
+    </div>
+</footer>
