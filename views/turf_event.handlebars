@@ -7,24 +7,19 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" href="/event/Couch">Couch Events</a>
-                <a class="nav-link" href="/event/Table">Table Events</a>
-                <a class="nav-link active" href="/event/Turf">Turf Events</a>            
+                <a class="nav-link" href="/event/couch">Couch Events</a>
+                <a class="nav-link" href="/event/table">Table Events</a>
+                <a class="nav-link active" href="/event/turf">Turf Events</a>            
             </div>
         </div>
 
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
-                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
-            </button>
-        </form>
+           <a href="/login">
+            {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
+        </a>
     </nav>
     
     <div id="main">
         
-        <!-- TURF SECTION/////////////////////////////////////////////////////////////////////////// -->
         <div class="row pl-4 pr-4">
             <div class="col-12 text-center">              
                 <img src="/assets/images/turf.png">
@@ -50,16 +45,13 @@
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
-                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                                    <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
                                     <a href="/event/turf/{{id}}"><p>&nbsp;{{title}}</p></a>
                                 </div>
                                 <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
-                                    <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                                    <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                                    <span>{{description}}</span>
+                                    <svg class="float-left" width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                                    <svg class="float-right" width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                                    <span>{{description}}</span><p></p>
                                 </div>
                             </div>
                         </div>

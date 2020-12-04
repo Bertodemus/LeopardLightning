@@ -1,12 +1,8 @@
     <nav class="navbar navbar-dark bg-nav">
-        <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
-                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
-            </button>
-        </form>
+    <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f" ;><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+          <a href="/login">
+            {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
+        </a>
     </nav>
 
     <div class="container">
@@ -73,9 +69,9 @@
             </div>
           </div>
 
-          <div class="couchEventHeader w-100 pl-3">
+          {{!-- <div class="couchEventHeader w-100 pl-3">
               YOUR EVENTS
-          </div>
+          </div> --}}
           <ul class="pt-1">
             {{#each userEvents}}
             <li>

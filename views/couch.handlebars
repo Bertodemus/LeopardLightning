@@ -13,19 +13,15 @@
             </div>
         </div>
 
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            <button class="btn btn-light my-2 my-sm-0 ml-2" type="submit" data-id="{{id}}" data-loggedIn="{{logged}}">
-                {{#if logged}}{{avatar}}{{else}}<i class="far fa-user-circle"></i>{{/if}}
-            </button>
-        </form>
+           <a href="/login">
+            {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
+        </a>
     </nav>
 
     <div id="main">
         <div class="row py-3">
             <div class="col-6 text-center my-auto">
-                <h1 class="eventTitleBig">{{title}}</h1>
+                <h1 class="eventTitleBig">{{dbevent.title}}</h1>
             </div>
             <div class="col-6 text-center">
                 <img src="/assets/images/couchanglefull.png" width="500px" >
@@ -47,7 +43,7 @@
             
 
                 <!-- STAT BOX-->
-                <div class="row eventStats px-3">
+                <div class="row eventStats px-3 h-100">
                     <div class="col-12 py-2 event-turf">
                         <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                             {{!-- <div style="width: auto; height: 300px;"> --}}
@@ -72,7 +68,7 @@
             
 
                 <!-- STAT BOX-->
-                <div class="row eventStats px-3">
+                <div class="row eventStats px-3 h-100">
                     <div class="col-12 py-2 event-turf">
                         <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                             {{!-- <div style="width: auto; height: 300px;"> --}}
@@ -87,24 +83,30 @@
             </div>
         </div>
 
+            <div class="pl-3 pr-3 pb-1 pt-1 mb-1">
+                {{!-- <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for Player 1!" id="vote-one">
+                <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for Player 2!" id="vote-two">  --}}
+                
+
+                <!-- COMMENT BOX-->
+                <form class="text-center pb-2 mb-0">
+                    <div class="form-group ml-1 mr-1 pl-3 pr-3 mt-4">
+                        <input class="btn btn-warning float-left" id="vote-one" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_one_name}}!">
+                        <input id="teamOneVote" type="text" readonly class="btn btn-light float-left" value="{{dbevent.team_one_votes}}">
+                        <input class="btn btn-warning float-right" id="vote-two" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_two_name}}!">
+                        <input id="teamTwoVote" type="text" readonly class="btn btn-light float-right" value="{{dbevent.team_two_votes}}">
+                    </div>
+                </form>
+                <br>
+
+            </div>
+
             <!-- COMMENT BOX HEADER-->
             <div class="row pl-4 pr-4 pb-1 pt-1">
                 <div class="col-12 text-center couchEventHeader">
                     BACK UP YOUR PROJECTED WINNER
                 </div>
-            </div>
-         
-            <!-- COMMENT BOX-->
-            <div class="form-group pl-3 pr-3 pb-1 pt-1">
-                <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for Player 1!" id="vote-one">
-                <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for Player 2!" id="vote-two"> 
-                <br>
-            </div>
-            <div class="row pl-4 pr-4 pb-1 pt-1">
-                <div class="col-12 couchEventHeader">
-                    <br>
-                </div>
-            </div>            
+            </div>       
             
             <div class="row pl-4 pr-4 pb-1 pt-1">
                 <div class="col-12">
@@ -113,10 +115,25 @@
             </div>                             
             <br>
 
+                {{!-- <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{dbevent.team_one_votes}}" aria-valuenow={{dbevent.team_one_votes}} aria-valuemin="0" aria-valuemax="100">{{dbevent.team_one_name}}: {{dbevent.team_one_vote}}</div>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: {{dbevent.team_two_votes}}" aria-valuenow={{dbevent.team_two_votes}} aria-valuemin="0" aria-valuemax="100">{{dbevent.team_two_name}}: {{dbevent.team_two_vote}}</div>
+                </div>
+
+                <!-- PICTURES-->
+                <div class="row ml-1 mr-1 pl-3 pr-3 mb-3">
+                    <div class="col-12 couchEventHeader">
+                        <br> --}}
+
+
             <!-- PICTURES-->
             <div class="row pl-4 pr-4 pb-1 pt-1">
                 <div class="col-12 couchEventHeader">
                     <br>
+                    </div>
                 </div>
             </div>
 
@@ -147,5 +164,6 @@
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script src="/js/vote.js"></script>
 
     

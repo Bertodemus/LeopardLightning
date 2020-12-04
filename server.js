@@ -27,20 +27,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-////////////////
-// Handlebars.registerHelper("ifCond", function(v1, v2, options) {
-//   if (v1 === v2) {
-//     return options.fn(this);
-//   }
-//   return options.inverse(this);
-// });
-///////////////////
-
-
-
-
-
+//Helper Function for Handlebars implementation
 const hbs = expressHandlebars.create({
   helpers: {
     ifCond: function(v1, v2, options) {
@@ -54,25 +41,10 @@ const hbs = expressHandlebars.create({
   defaultLayout: "main"
 });
 
-// app.engine('handlebars', hbs.engine);
-
-
-
-
-
-
-//***handlebars code, feel free to comment out if you need to work on the HTML //DS-11/24
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.engine("handlebars", expressHandlebars({handlebars: allowInsecurePrototypeAccess(Handlebars)}));
-
 app.engine("handlebars", hbs.engine);
 
 app.set("view engine", "handlebars");
 
-//Helper Function for Handlebars implementation
-
-//***gives server access to routes //DS 11-24
-// app.use(routes);
 
 // Requiring our routes
 app.use(routes);
