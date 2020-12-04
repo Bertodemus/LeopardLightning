@@ -50,13 +50,21 @@ const eventController = {
     Model.Event.findOne({_id: id}).remove((err, removed) => res.json(id))
   },
 
-  update(req, res) {
+  updateOne(req, res) {
     const id = req.params.id;
-    Model.Event.findOne({_id: id}).update({team_one_votes: req.body.team_one_votes, team_two_votes: req.body.team_two_votes})
-    .then(function([ rowsUpdate, [updatedEvent] ]) {
-      res.json(updatedEvent)
+    Model.Event.increment("team_one_votes", { by: 1, where: {id: id}})
+    .then(function(dbevent) {
+      res.json(dbevent)
     })
-    .catch(next)
+    .catch(console.log("next"))
+  },
+  updateTwo(req, res) {
+    const id = req.params.id;
+    Model.Event.increment("team_two_votes", { by: 1, where: {id: id}})
+    .then(function(dbevent) {
+      res.json(dbevent)
+    })
+    .catch(console.log("next"))
   }
 }
 
