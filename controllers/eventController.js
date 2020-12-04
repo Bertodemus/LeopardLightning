@@ -11,7 +11,7 @@ const eventController = {
 
   byID: async function(req, res) {
     let id = req.params.id;
-    id = id + " Event";
+    id = id + " event";
     console.log(id);
     await Model.Event.findAll({ where: {category: id} }).then(dbevent => {
       console.log(dbevent);
