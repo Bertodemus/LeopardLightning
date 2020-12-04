@@ -1,5 +1,18 @@
-    <nav class="navbar navbar-dark bg-nav">
-        <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+        <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f";><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/event/Couch">Couch Events</a>
+                <a class="nav-link active" href="/event/Table">Table Events</a>
+                <a class="nav-link" href="/event/Turf">Turf Events</a>            
+            </div>
+        </div>
+
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
@@ -12,47 +25,9 @@
     <div id="main">
         
         <!-- TABLE SECTION/////////////////////////////////////////////////////////////////////////// -->
-        <div class="row pl-4 pr-4 pt-3">
-            <div class="col-12 text-left">
-                
-                
-
-                <div id="carouselTableEvents" class="carousel slide pb-2 carouselTop" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        {{!-- according to HandleBars, if the value for the #if statement is false, undefined, null, "", 0, or [], Handlebars will not render the block. --}}
-                        {{#each tableEvents}}
-                            {{#if slideId}}<li data-target="#carouselTableEvents" data-slide-to="{{slideId}}"></li>{{else}}<li data-target="#carouselTableEvents" data-slide-to="{{slideId}}" class="active"></li>{{/if}}
-                        {{/each}}
-                        
-                    </ol>
-                    <div class="carousel-inner">
-
-                        {{#each tableEvents}}
-                            {{#if slideId}}<div class="carousel-item">{{else}}<div class="carousel-item active">{{/if}}
-                                <img class="d-block w-100" src="assets/images/tableSlide{{slideId}}.png" alt="slide {{slideId}}">
-                                <div class="carousel-caption d-none d-md-block text-right pr-3 pb-1">
-                                    <h5>{{slideTitle}}</h5>
-                                    <p>{{slideText}}</p>
-                                </div>
-                            </div>
-                        {{/each}}
-
-                    </div>
-
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-                
-                <img src="assets/images/table.png" width="150px" style="position: relative; margin-top: -68px; z-index: 500;">
-                
-
+        <div class="row pl-4 pr-4">
+            <div class="col-12 text-center">
+                <img src="/assets/images/table.png">
                 <div class="row">
                     <div class="col-12 couchEventHeader">
                         TABLE EVENTS
@@ -61,30 +36,30 @@
             </div>
         </div>
                     
-                {{#each tableEvents}}
+                {{#each dbevent}}
 
-                    <div class="row pl-4 pr-4 my-1" data-id="{{teID}}">
+                    <div class="row pl-4 pr-4 my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="event{{teID}}-tab" data-toggle="tab" href="#event{{teID}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="desc{{teID}}-tab" data-toggle="tab" href="#desc{{teID}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{teID}}" role="tabpanel" aria-labelledby="event{{teID}}-tab">
+                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
                                     {{eventIcon}}
                                     {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
-                                    <p>&nbsp;{{eventTitle}}</p>
+                                    <p>&nbsp;{{title}}</p>
                                 </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{teID}}" role="tabpanel" aria-labelledby="desc{{teID}}-tab">
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
                                     {{playerIcon1}}
                                     {{playerIcon2}}
                                     {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
                                     <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                                    <span>{{eventVs}}<br>{{eventTime}}</span>
+                                    <span>{{description}}</span>
                                 </div>
                             </div>
                         </div>
@@ -96,8 +71,8 @@
             <div class="col-12 couchEventHeader">
                 <br>
             </div>
-            <div class="col-12 footImage">
-                <img src="assets/images/tableBottom.png" width="150px">
+            <div class="col-12 footImage text-center">
+                <img src="/assets/images/tableBottom.png">
             </div>
         </div>
 

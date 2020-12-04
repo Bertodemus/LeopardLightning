@@ -1,5 +1,18 @@
-    <nav class="navbar navbar-dark bg-nav">
-        <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+        <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f";><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/event/Couch">Couch Events</a>
+                <a class="nav-link" href="/event/Table">Table Events</a>
+                <a class="nav-link" href="/event/Turf">Turf Events</a>            
+            </div>
+        </div>
+
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
@@ -11,12 +24,11 @@
 
     <div id="main">
         <div class="row py-3">
-            <div class="col-4 text-center">
+            <div class="col-6 text-center my-auto">
+                <h1 class="eventTitleBig">Title for the event!!</h1>
             </div>
-            <div class="col-4 text-center">
-                <img src="assets/images/couch.png" width="280px" >
-            </div>
-            <div class="col-4 text-center">
+            <div class="col-6 text-center">
+                <img src="/assets/images/couchanglefull.png" width="500px" >
             </div>
 
             <!-- EVENT NUMBER ONE ROWS-->
@@ -25,7 +37,7 @@
                 <div class="col-6 text-center pl-5 pr-0">
                     <div class="row pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                            {{couchEvent.teamOne.name}}
+                            {{dbevent.team_one_name}}
                         </div>
                         {{!-- this is here for the progressbar.js  --}}
                         <div id="oppon1"></div>
@@ -37,7 +49,7 @@
                             <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                                 <div style="width: auto; height: 300px;">
                                     <p class="statsText1 py-2 px-2">
-                                        {{couchEvent.teamOne.stats}}
+                                        {{dbevent.team_one_stat}}
                                     </p>
                                 </div>
                             </div>
@@ -48,7 +60,7 @@
                     <!-- COMMENT HEADER-->
                     <div class="row pb-1 pt-2 px-3">
                         <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{couchEvent.teamOne.name}}
+                        COMMENTS FOR {{dbevent.team_one_name}}
 
                         </div>
                     </div>
@@ -73,7 +85,7 @@
 
                     <div class="row pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                            {{couchEvent.teamTwo.name}}
+                            {{dbevent.team_two_name}}
                         </div>
                     </div>
 
@@ -83,7 +95,7 @@
                             <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                                 <div style="width: auto; height: 300px;">
                                     <p class="statsText2 py-2">
-                                        {{couchEvent.teamTwo.stats}}
+                                        {{dbevent.team_two_stat}}
                                     </p>
                                 </div>
                             </div>
@@ -93,7 +105,7 @@
                     <!-- COMMENT BOX-->
                     <div class="row pt-2 pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{couchEvent.teamTwo.name}}
+                        COMMENTS FOR {{dbevent.team_two_name}}
                         </div>
                     </div>
             
@@ -125,28 +137,20 @@
                 <form class="text-center pb-2">
                     <div class="form-group ml-1 mr-1 pl-3 pr-3">
                         <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{tableEvent.teamOne.name}}!">
-                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{tableEvent.teamTwo.name}}!">
+                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{dbevent.team_one_name}}!">
+                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{dbevent.team_two_name}}!">
                     </div>
                 </form>
                 <br>
 
 
                 <!-- PICTURES-->
-                <div class="row ml-1 mr-1 pl-3 pr-3">
+                <div class="row ml-1 mr-1 pl-3 pr-3 mb-3">
                     <div class="col-12 couchEventHeader">
                         <br>
                     </div>
                 </div>
-                <div class="row ml-1 mr-1 pl-3 pr-3">
-                    <div class="col-4 text-center">
-                    </div>
-                    <div class="col-4 text-center">
-                        <img src="assets/images/couchBottom.png" width="280px" >
-                    </div>
-                    <div class="col-4 text-center">
-                    </div>
-                </div>
+                
             </div>
 
 
