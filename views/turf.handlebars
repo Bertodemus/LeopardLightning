@@ -7,9 +7,9 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="/couch-event">Couch Events</a>
-                <a class="nav-link" href="/table-event">Table Events</a>
-                <a class="nav-link" href="/turf-event">Turf Events</a>
+                <a class="nav-link" href="/event/couch">Couch Events</a>
+                <a class="nav-link" href="/event/table">Table Events</a>
+                <a class="nav-link active" href="/event/turf">Turf Events</a>
             </div>
         </div>
 
@@ -25,10 +25,10 @@
     <div id="main">
         <div class="row py-3">
             <div class="col-6 text-center my-auto">
-                <h1 class="eventTitleBig">Title for the event!!</h1>
+                <h1 class="eventTitleBig">{{dbevent.title}}</h1>
             </div>
             <div class="col-6 text-center">
-                <img src="assets/images/turfanglefull.png" width="500px" >
+                <img src="/assets/images/turfanglefull.png" width="500px" >
             </div>
 
             <!-- EVENT NUMBER ONE ROWS-->
@@ -37,7 +37,7 @@
                 <div class="col-6 text-center pl-5 pr-0">
                     <div class="row pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                            {{turfEvent.teamOne.name}}
+                            {{dbevent.team_one_name}}
                         </div>
                         {{!-- this is here for the progressbar.js  --}}
                         <div id="oppon1"></div>
@@ -49,7 +49,7 @@
                             <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                                 <div style="width: auto; height: 300px;">
                                     <p class="statsText1 py-2 px-2">
-                                        {{turfEvent.teamOne.stats}}
+                                        {{dbevent.team_one_stat}}
                                     </p>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                     <!-- COMMENT HEADER-->
                     <div class="row pb-1 pt-2 px-3">
                         <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{turfEvent.teamOne.name}}
+                        COMMENTS FOR {{dbevent.team_one_name}}
 
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                     <div class="row px-3 pb-1">
                         <div class="col-12 py-2 event-turf">
                             <ul class="list-group text-left">
-                                {{#each turfEvent.teamOne.comments}}
+                                {{#each dbevent.teamOne.comments}}
                                     {{!-- this will probably have to be an array --}}
                                     <li class="listOne list-group-item">{{this}}</li>
                                 {{/each}}
@@ -85,7 +85,7 @@
 
                     <div class="row pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                            {{turfEvent.teamTwo.name}}
+                            {{dbevent.team_two_name}}
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@
                             <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
                                 <div style="width: auto; height: 300px;">
                                     <p class="statsText2 py-2">
-                                        {{turfEvent.teamTwo.stats}}
+                                        {{dbevent.team_two_stat}}
                                     </p>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                     <!-- COMMENT BOX-->
                     <div class="row pt-2 pb-1 px-3">
                         <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{turfEvent.teamTwo.name}}
+                        COMMENTS FOR {{dbevent.team_two_name}}
                         </div>
                     </div>
             
@@ -137,8 +137,8 @@
                 <form class="text-center pb-2">
                     <div class="form-group ml-1 mr-1 pl-3 pr-3">
                         <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{turfEvent.teamOne.name}}!">
-                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{turfEvent.teamTwo.name}}!">
+                        <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for {{dbevent.team_one_name}}!">
+                        <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for {{dbevent.team_two_name}}!">
                     </div>
                 </form>
                 <br>
