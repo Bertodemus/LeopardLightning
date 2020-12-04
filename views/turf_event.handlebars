@@ -7,9 +7,9 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="/couch-event">Couch Events</a>
-                <a class="nav-link" href="/table-event">Table Events</a>
-                <a class="nav-link" href="/turf-event">Turf Events</a>
+                <a class="nav-link" href="/event/Couch">Couch Events</a>
+                <a class="nav-link" href="/event/Table">Table Events</a>
+                <a class="nav-link active" href="/event/Turf">Turf Events</a>            
             </div>
         </div>
 
@@ -25,47 +25,9 @@
     <div id="main">
         
         <!-- TURF SECTION/////////////////////////////////////////////////////////////////////////// -->
-        <div class="row pl-4 pr-4 pt-3">
-            <div class="col-12 text-left">
-                
-                
-
-                <div id="carouselTurfEvents" class="carousel slide pb-2 carouselTop" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        {{!-- according to HandleBars, if the value for the #if statement is false, undefined, null, "", 0, or [], Handlebars will not render the block. --}}
-                        {{#each turfEvents}}
-                            {{#if slideId}}<li data-target="#carouselTurfEvents" data-slide-to="{{slideId}}"></li>{{else}}<li data-target="#carouselTurfEvents" data-slide-to="{{slideId}}" class="active"></li>{{/if}}
-                        {{/each}}
-                        
-                    </ol>
-                    <div class="carousel-inner">
-
-                        {{#each turfEvents}}
-                            {{#if slideId}}<div class="carousel-item">{{else}}<div class="carousel-item active">{{/if}}
-                                <img class="d-block w-100" src="assets/images/tableSlide{{slideId}}.png" alt="slide {{slideId}}">
-                                <div class="carousel-caption d-none d-md-block text-right pr-3 pb-1">
-                                    <h5>{{slideTitle}}</h5>
-                                    <p>{{slideText}}</p>
-                                </div>
-                            </div>
-                        {{/each}}
-
-                    </div>
-
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-                
-                <img src="assets/images/turf.png" width="150px" style="position: relative; margin-top: -68px; z-index: 500;">
-                
-
+        <div class="row pl-4 pr-4">
+            <div class="col-12 text-center">              
+                <img src="/assets/images/turf.png">
                 <div class="row">
                     <div class="col-12 couchEventHeader">
                         TURF EVENTS
@@ -74,30 +36,30 @@
             </div>
         </div>
                     
-                {{#each turfEvents}}
+                {{#each dbevent}}
 
-                    <div class="row my-1" data-id="{{tueID}}">
+                    <div class="row pl-4 pr-4 my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="event{{tueID}}-tab" data-toggle="tab" href="#event{{tueID}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="desc{{tueID}}-tab" data-toggle="tab" href="#desc{{tueID}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{tueID}}" role="tabpanel" aria-labelledby="event{{tueID}}-tab">
+                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
                                     {{eventIcon}}
                                     {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
-                                    <p>&nbsp;{{eventTitle}}</p>
+                                    <p>&nbsp;{{title}}</p>
                                 </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{tueID}}" role="tabpanel" aria-labelledby="desc{{tueID}}-tab">
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
                                     {{playerIcon1}}
                                     {{playerIcon2}}
                                     {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
                                     <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                                    <span>{{eventVs}}<br>{{eventTime}}</span>
+                                    <span>{{description}}</span>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +71,8 @@
             <div class="col-12 couchEventHeader">
                 <br>
             </div>
-            <div class="col-12 footImage">
-                <img src="assets/images/turfBottom.png" width="150px">
+            <div class="col-12 footImage text-center mb-2">
+                <img src="/assets/images/turfBottom.png">
             </div>
         </div>
 

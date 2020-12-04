@@ -2,7 +2,11 @@
 const express = require("express");
 const session = require("express-session");
 //Imports handlebars //DS-11/24
-const exphbs = require("express-handlebars");
+const Handlebars = require('handlebars')
+const expressHandlebars = require("express-handlebars");
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+
+
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const routes = require("./routes/eventRoutes.js");
@@ -23,9 +27,49 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+////////////////
+// Handlebars.registerHelper("ifCond", function(v1, v2, options) {
+//   if (v1 === v2) {
+//     return options.fn(this);
+//   }
+//   return options.inverse(this);
+// });
+///////////////////
+
+
+
+
+
+const hbs = expressHandlebars.create({
+  helpers: {
+    ifCond: function(v1, v2, options) {
+      if (v1 === v2) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    }
+  },
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+  defaultLayout: "main"
+});
+
+// app.engine('handlebars', hbs.engine);
+
+
+
+
+
+
 //***handlebars code, feel free to comment out if you need to work on the HTML //DS-11/24
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.engine("handlebars", expressHandlebars({handlebars: allowInsecurePrototypeAccess(Handlebars)}));
+
+app.engine("handlebars", hbs.engine);
+
 app.set("view engine", "handlebars");
+
+//Helper Function for Handlebars implementation
 
 //***gives server access to routes //DS 11-24
 // app.use(routes);
