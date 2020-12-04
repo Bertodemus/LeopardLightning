@@ -5,6 +5,7 @@ form.login {
 
 body {
   background: linear-gradient(#313131, #1b1b1b) fixed;
+  min-width: 1200px;
 }
 
 #main {
@@ -70,3 +71,24 @@ div .tab-pane {
 .eventTitleBig {
   color: #313131;
 }
+
+#disqus_thread {
+  background-color: #e8e8e85f;
+}
+
+a:link {
+  color:#415a5f;
+}
+
+a:visited {
+  color:#627174;
+}
+
+a:hover {
+  color: #f7ae3f;
+}
+
+.statsText1 {
+  word-break: break-all;
+}
+
