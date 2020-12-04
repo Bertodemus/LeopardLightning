@@ -1,6 +1,11 @@
 $(document).ready(() => {
     $(".create-event").on("click", function(event) {
         event.preventDefault();
+
+        $.getJSON("api/user_data", function(data) {
+          // Make sure the data contains the username as expected before using it
+            console.log('UserId: ' + data.id);
+            let id = data.id;
     
         let newEvent = {
           title: $("#eventTitle").val().trim(),
@@ -9,7 +14,8 @@ $(document).ready(() => {
           team_one_name: $("#playerOneName").val().trim(),
           team_one_stat: $("#playerOneStats").val().trim(),
           team_two_name: $("#playerTwoName").val().trim(),
-          team_two_stat: $("#playerTwoStats").val().trim()
+          team_two_stat: $("#playerTwoStats").val().trim(),
+          UserId: id
         };
     
         // Send the POST request.
@@ -20,10 +26,11 @@ $(document).ready(() => {
           function() {
             console.log("created new event");
             // Reload the page to get the updated list
-            //location.reload();
+            location.reload();
           }
         );
       });
+    });
 
     $("#delete-event").on("click", function(event) {
         let id = $(this).data("id");

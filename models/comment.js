@@ -11,17 +11,9 @@ module.exports = function(sequelize, DataTypes) {
       freezeTableName: true
     }
   );
-
+  //Add association to belong to Event
   Comment.associate = models => {
-    Comment.belongsToMany(models.Event, {
-      through: "event_comment",
-      as: "events",
-      foreignKey: "comment_id"
-    });
-  };
-
-  Comment.associate = models => {
-    Comment.belongsTo(models.User, {
+    Comment.belongsTo(models.Event, {
       foreignKey: {
         allowNull: false
       }
