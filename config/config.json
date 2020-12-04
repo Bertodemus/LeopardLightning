@@ -1,14 +1,22 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "CoolP001Par7y!",
+=======
+    "password": "My5q1_Okinawa1",
+>>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
     "database": "passport_demo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "CoolP001Par7y!",
+=======
+    "password": "My5q1_Okinawa1",
+>>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"

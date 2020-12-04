@@ -17,13 +17,18 @@
                 <img src="assets/images/couch.png" width="280px">
                     <div class="row">
                         <div class="col-12 couchEventHeader">
-                            <a class="indexLink" href="/couch-event" style="color: #f7ae3f">COUCH EVENTS</a>
+                            <a class="indexLink" href="/event/Couch" style="color: #f7ae3f">COUCH EVENTS</a>
                         </div>
                     </div>
+<<<<<<< HEAD
 
                 {{!-- {{#each events}} --}}
                     {{!-- {{#with category}} --}}
                     {{!-- {{Couch Event}} --}}
+=======
+                {{#each dbevent}}
+                    {{#ifCond category "Couch Event"}}
+>>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
                     <div class="row my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -36,17 +41,37 @@
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
+<<<<<<< HEAD
                                     <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px">
                                     <p>&nbsp;{{events.title}}</p>
                                 </div>
                                 <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
                                     <p>&nbsp;{{events.description}}</p>
+=======
+                                    {{eventIcon}}
+                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                                    <p>&nbsp;{{title}}</p>
+                                </div>
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
+                                    {{playerIcon1}}
+                                    {{playerIcon2}}
+                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
+                                    <span>{{description}}</span>
+>>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
                                 </div>
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     {{!-- {{/with}} --}}
                 {{!-- {{/each}} --}}
+=======
+                    {{!-- {{else}}
+                        {{v1}} is not equal to {{v2}} --}}
+                    {{/ifCond}}
+                {{/each}}
+>>>>>>> 673340b8c7ae926868e3435d10b1180b6aee89a8
 
 
                 <div class="row">
@@ -64,39 +89,41 @@
                 <img src="assets/images/table.png" width="280px">
                     <div class="row">
                         <div class="col-12 couchEventHeader">
-                            <a class="indexLink" href="/table-event" style="color: #f7ae3f">TABLE EVENTS</a>
+                            <a class="indexLink" href="/event/Table" style="color: #f7ae3f">TABLE EVENTS</a>
                         </div>
                     </div>
 
-                {{#each tableEvents}}
-
-                    <div class="row my-1" data-id="{{teID}}">
+                {{#each dbevent}}
+                    {{#ifCond category "Table Event"}}
+                    <div class="row my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="event{{teID}}-tab" data-toggle="tab" href="#event{{teID}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="desc{{teID}}-tab" data-toggle="tab" href="#desc{{teID}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{teID}}" role="tabpanel" aria-labelledby="event{{teID}}-tab">
+                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
                                     {{eventIcon}}
-                                    <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px">
-                                    <p>&nbsp;{{eventTitle}}</p>
+                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                                    <p>&nbsp;{{title}}</p>
                                 </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{teID}}" role="tabpanel" aria-labelledby="desc{{teID}}-tab">
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
                                     {{playerIcon1}}
                                     {{playerIcon2}}
-                                    <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px">
-                                    <span>{{eventVs}}<br>{{eventTime}}</span>
+                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
+                                    <span>{{description}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    {{!-- {{else}}
+                        {{v1}} is not equal to {{v2}} --}}
+                    {{/ifCond}}
                 {{/each}}
 
                 <div class="row">
@@ -119,35 +146,37 @@
                         </div>
                     </div>
 
-                {{#each turfEvents}}
-
-                    <div class="row my-1" data-id="{{tueID}}">
+                {{#each dbevent}}
+                    {{#ifCond category "Turf Event"}}
+                    <div class="row my-1" data-id="{{id}}">
                         <div class="col-12 pt-2 pb-2 event-turf">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="event{{tueID}}-tab" data-toggle="tab" href="#event{{tueID}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="desc{{tueID}}-tab" data-toggle="tab" href="#desc{{tueID}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{tueID}}" role="tabpanel" aria-labelledby="event{{tueID}}-tab">
+                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
                                     {{eventIcon}}
-                                    <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px">
-                                    <p>&nbsp;{{eventTitle}}</p>
+                                    {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                                    <p>&nbsp;{{title}}</p>
                                 </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{tueID}}" role="tabpanel" aria-labelledby="desc{{tueID}}-tab">
+                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
                                     {{playerIcon1}}
                                     {{playerIcon2}}
-                                    <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px">
-                                    <span>{{eventVs}}<br>{{eventTime}}</span>
+                                    {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
+                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
+                                    <span>{{description}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    {{!-- {{else}}
+                        {{v1}} is not equal to {{v2}} --}}
+                    {{/ifCond}}
                 {{/each}}
 
                 <div class="row">
