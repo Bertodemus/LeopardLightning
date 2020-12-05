@@ -94,10 +94,10 @@ GIVEN a login page, I have the choice to either login or sign up
 THEN I type in my email address and password
 WHEN I click submit I am redirected to the members page
 THEN I am presented with a list of actions for me to choose from
-WHEN I click “Create Event” I am presented with a form
+WHEN I click “Create Event”, I am presented with a form
 THEN I fill out the corresponding information for the event I would like to create
 WHEN I click “Generate”, the event will be created for others to debate on
-WHEN I click "All Events", I am presented with the main page
+WHEN I click "All Events", I am presented with the main page of events
 THEN I can see all the couch, table and turf events with an individualized description
 WHEN I click on the event button I am redirected to that event's specific page
 THEN I am able to see the two teams/players who are competing and who members are voting for, and why they believe their choice will win
@@ -121,18 +121,18 @@ Allowing users to watch the game and comment in one place would make for a more 
 
 Displaying previous official win/loss record, comments and user input on who was projected to win, would help the user formulate a clearer decision on who they believe the winner will be. Looking at previous content might strength or weaken their prediction. 
 
-### Allow Members to See Previous History
+### User Ranking System
 
-**This feature would allow members to be able to see what events they previous commented on and their voting history**
+**This feature would allow members to gain points for how active they are on Together Against**
 
-Allow members to walk down memory lane and see what events they previously voted on and where their alliance lied two years ago. 
+Allow members to gain points and ranking based on how many projections they get correct and how active they are on Together Against
 
 
 
 ## Links and Screenshots
 Repo: https://github.com/Bertodemus/LeopardLightning
 
-Deployed App: LINK HERE
+Deployed App: https://leopard-ta.herokuapp.com/
 
 Login Page:
 
