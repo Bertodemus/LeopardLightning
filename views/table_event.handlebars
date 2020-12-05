@@ -1,10 +1,9 @@
+    {{!-- NAV////////// --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
         <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f";><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link" href="/event/couch">Couch Events</a>
@@ -12,14 +11,12 @@
                 <a class="nav-link" href="/event/turf">Turf Events</a>            
             </div>
         </div>
-
          <a href="/login">
             {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
         </a>
     </nav>
-    
+    {{!-- MAIN////////// --}}
     <div id="main">
-        
         <div class="row pl-4 pr-4">
             <div class="col-12 text-center">
                 <img src="/assets/images/table.png">
@@ -30,35 +27,31 @@
                 </div>
             </div>
         </div>
-                    
-                {{#each dbevent}}
-
-                    <div class="row pl-4 pr-4 my-1" data-id="{{id}}">
-                        <div class="col-12 pt-2 pb-2 event-turf">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
-                                    <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
-                                    <a href="/event/table/{{id}}"><p>&nbsp;{{title}}</p></a>
-                                </div>
-                                <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
-                                    <svg class="float-left" width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                                    <svg class="float-right" width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                                    <span>{{description}}</span><p></p>
-                                </div>
-                            </div>
-                        </div>
+        {{#each dbevent}}
+        <div class="row pl-4 pr-4 my-1" data-id="{{id}}">
+            <div class="col-12 pt-2 pb-2 event-turf">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="event{{id}}-tab" data-toggle="tab" href="#event{{id}}" role="tab" aria-controls="Event" aria-selected="true">Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="desc{{id}}-tab" data-toggle="tab" href="#desc{{id}}" role="tab" aria-controls="Description" aria-selected="false">Description</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel" aria-labelledby="event{{id}}-tab">
+                        <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
+                        <a href="/event/table/{{id}}"><p>&nbsp;{{title}}</p></a>
                     </div>
-
-                {{/each}}
-
+                    <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel" aria-labelledby="desc{{id}}-tab">
+                        <svg class="float-left" width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                        <svg class="float-right" width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                        <span>{{description}}</span><p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
         <div class="row pl-4 pr-4">
             <div class="col-12 couchEventHeader">
                 <br>
@@ -67,9 +60,8 @@
                 <img src="/assets/images/tableBottom.png">
             </div>
         </div>
-
     </div>
-
+    {{!-- FOOTER////////// --}}
     <footer class="footer pt-3 pb-3">
         <div class="container text-center">
             <span>TOGETHER:AGAINST 2020</span>

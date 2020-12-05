@@ -1,14 +1,14 @@
+{{!-- NAVIGATION////////// --}}
 <nav class="navbar navbar-dark bg-nav">
     <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f" ;><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
-        <a href="/login">
-            {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
-        </a>
+    <a href="/login">
+        {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
+    </a>
 </nav>
-
+{{!-- MAIN////////// --}}
 <div id="main">
-
-    <!-- COUCH SECTION/////////////////////////////////////////////////////////////////////////// -->
     <div class="row pt-3 pb-3">
+        {{!-- COUCH////////// --}}
         <div class="col-4 text-center pl-5">
             <img src="assets/images/couch.png" width="280px">
             <div class="row">
@@ -49,8 +49,6 @@
             </div>
             {{/ifCond}}
             {{/each}}
-
-
             <div class="row">
                 <div class="col-12 couchEventHeader">
                     <br>
@@ -60,8 +58,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- TABLE SECTION/////////////////////////////////////////////////////////////////////////// -->
+        {{!-- TABLE////////// --}}
         <div class="col-4 text-center pl-4 pr-4">
             <img src="assets/images/table.png" width="280px">
             <div class="row">
@@ -69,7 +66,6 @@
                     <a class="indexLink" href="/event/table" style="color: #f7ae3f">TABLE EVENTS</a>
                 </div>
             </div>
-
             {{#each dbevent}}
             {{#ifCond category "Table Event"}}
             <div class="row my-1" data-id="{{id}}">
@@ -88,7 +84,6 @@
                         <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
                             aria-labelledby="event{{id}}-tab">
                             <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
-                            {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
                             <a href="/event/table/{{id}}">
                                 <p>&nbsp;{{title}}</p>
                             </a>
@@ -102,11 +97,8 @@
                     </div>
                 </div>
             </div>
-            {{!-- {{else}}
-                        {{v1}} is not equal to {{v2}} --}}
             {{/ifCond}}
             {{/each}}
-
             <div class="row">
                 <div class="col-12 couchEventHeader">
                     <br>
@@ -116,17 +108,14 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- TURF SECTION/////////////////////////////////////////////////////////////////////////// -->
         <div class="col-4 text-center pr-5">
+            {{!-- TURF////////// --}}
             <img src="assets/images/turf.png" width="280px">
             <div class="row">
                 <div class="col-12 couchEventHeader">
                     <a class="indexLink" href="/event/turf" style="color: #f7ae3f">TURF EVENTS</a>
                 </div>
             </div>
-
             {{#each dbevent}}
             {{#ifCond category "Turf Event"}}
             <div class="row my-1" data-id="{{id}}">
@@ -158,11 +147,8 @@
                     </div>
                 </div>
             </div>
-            {{!-- {{else}}
-                        {{v1}} is not equal to {{v2}} --}}
             {{/ifCond}}
             {{/each}}
-
             <div class="row">
                 <div class="col-12 couchEventHeader">
                     <br>
@@ -172,10 +158,9 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-
+{{!-- FOOTER////////// --}}
 <footer class="footer pt-3 pb-3">
     <div class="container text-center">
         <span>TOGETHER:AGAINST 2020</span>
