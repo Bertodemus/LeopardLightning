@@ -159,7 +159,11 @@ Event Page:
 
 
 
-## Created by
+## Created by Team Leopard Lightning
+<p>
+<img src = "public/assets/images/LLightning.png" width="180px" >
+</p>
+
 - [David Stinnet](https://github.com/serjykalstryke "Visit David's GitHub")
 - [Roberto Rubet](https://github.com/Bertodemus "Visit Berto's GitHub")
 - [Jordan Sarvay](https://github.com/Jsarvay "Visit Jordan's GitHub")
