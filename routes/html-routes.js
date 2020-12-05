@@ -36,17 +36,11 @@ module.exports = function(app) {
   app.get("/event/:type/:id", router);
 
   app.get("/member-home", router);
-  // app.get("/couch-event", (req, res) => {
-  //   res.render("couch_event", {layout: "main.handlebars"});
-  // });
+
 
   app.get("/couch", (req, res) => {
     res.render("couch", {layout: "main.handlebars"});
   });
-
-  // app.get("/table-event", (req, res) => {
-  //   res.render("table_event", {layout: "main.handlebars"});
-  // });
 
   app.get("/table", (req, res) => {
     res.render("table", {layout: "main.handlebars"});
@@ -65,5 +59,3 @@ module.exports = function(app) {
   });
 
 };
-
-//made it render handlebar files, feel free to change back to the html if you need to //DS-11/24
