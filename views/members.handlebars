@@ -1,10 +1,11 @@
+    {{!-- NAV////////// --}}
     <nav class="navbar navbar-dark bg-nav">
     <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f" ;><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
           <a href="/login">
             {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
         </a>
     </nav>
-
+    {{!-- MEMBERS////////// --}}
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-8 pt-5">
@@ -12,7 +13,6 @@
           {{userName}}
           <br/>
           <p>Thanks for stopping by! Visit the main event hub, select a specific event type, or create one of your own!</p>
-          <!-- Doesnt redirect to anything at the moment -->
           <a href="/member-home">
             <button class="btn btn-light w-100 mb-1">All Events</button>
           </a>
@@ -28,7 +28,6 @@
           <button class="btn btn-warning w-100 mb-1" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
             Create Event
           </button>
-            
           <div class="collapse" id="collapseMenu">
             <div class="card card-body">
               <form>
@@ -68,15 +67,11 @@
               </form>            
             </div>
           </div>
-
-          {{!-- <div class="couchEventHeader w-100 pl-3">
-              YOUR EVENTS
-          </div> --}}
+          {{!-- FUTURE FEATURE --}}
           <ul class="pt-1">
             {{#each userEvents}}
             <li>
               {{eventTitle}}
-              {{!-- will need to refer to a unique ID for button functionality --}}
               <button class="btn btn-danger float-right" type="submit">Remove</button>
               <button class="btn btn-secondary float-right mr-1" type="submit">Conclude</button>
               <button class="btn btn-light float-right mr-1" type="submit">View</button>
@@ -86,16 +81,14 @@
         </div>
       </div>
     </div>
-
     <div class="footfix w-100">
       &nbsp;
     </div>
-
+    {{!-- FOOTER////////// --}}
     <footer class="footer">
         <div class="text-center">
           <span>TOGETHER:AGAINST 2020</span>
         </div>
     </footer>
-    
     <script type="text/javascript" src="/js/members.js"></script>
     <script type="text/javascript" src="/js/button.js"></script>
