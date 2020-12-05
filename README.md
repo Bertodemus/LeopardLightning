@@ -33,6 +33,7 @@ On average, 150 million individuals per year attend professional sporting events
 <img src = "public/assets/images/tableAnglefull.png" width="150px" >
 <img src = "public/assets/images/turfanglefull.png" width="150px" >
 </p>
+
 ``` 
 AS an individual, I enjoy spending time with my friends by going to sporting events or watching games and events on TV.  
 I WANT to be able to connect, debate, and converse over outcomes of games/events. 
