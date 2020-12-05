@@ -86,6 +86,7 @@ $ node server
 -   Express
 -   Passport
 -   Jdenticon
+-   Disqus
 
 ## Functionality
 ```
@@ -98,11 +99,11 @@ THEN I fill out the corresponding information for the event I would like to crea
 WHEN I click “Generate”, the event will be created for others to debate on
 WHEN I click "All Events", I am presented with the main page
 THEN I can see all the couch, table and turf events with an individualized description
-WHEN I click on an event button I am redirected to that event's specific page
+WHEN I click on the event button I am redirected to that event's specific page
 THEN I am able to see the two teams/players who are competing and who members are voting for, and why they believe their choice will win
-WHEN I want to debate the winners, I make a comment in the comment box
+WHEN I want to join the debate, I make a comment in the comment box
 THEN I click on the corresponding button associated with who I think will win
-WHEN the button is clicked the comment will get populated to the appropriate column and my vote is cast
+WHEN the button is clicked the comment will appear and the vote will populate to the correct choice
 SO I can compete and connect with others, anywhere anytime. 
 ```
 
@@ -120,6 +121,12 @@ Allowing users to watch the game and comment in one place would make for a more 
 
 Displaying previous official win/loss record, comments and user input on who was projected to win, would help the user formulate a clearer decision on who they believe the winner will be. Looking at previous content might strength or weaken their prediction. 
 
+### Allow Members to See Previous History
+
+**This feature would allow members to be able to see what events they previous commented on and their voting history**
+
+Allow members to walk down memory lane and see what events they previously voted on and where their alliance lied two years ago. 
+
 
 
 ## Links and Screenshots
@@ -128,7 +135,19 @@ Repo: https://github.com/Bertodemus/LeopardLightning
 Deployed App: LINK HERE
 
 Login Page:
+
 ![Login Page](public/assets/images/readMeLog.gif)
+
+Main Page: 
+![Main Page](public/assets/images/mainRM.gif)
+
+Individual Event Page:
+![Event Page](public/assets/images/eventRM.gif)
+
+Event Page:
+![Event Page](public/assets/images/couchRM.gif)
+
+
 
 
 ## Created by
