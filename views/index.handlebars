@@ -1,6 +1,5 @@
 <nav class="navbar navbar-dark bg-nav">
-    <a class="navbar-brand pt-0 pb-0"><img src="/assets/images/TALogo2.png"
-            width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
+    <a class="navbar-brand pt-0 pb-0" href="/" style="color: #f7ae3f" ;><img src="/assets/images/TALogo2.png" width="80px">&nbsp;&nbsp;TOGETHER:AGAINST</a>
         <a href="/login">
             {{#if logged}}{{avatar}}{{else}}<i class="btn btn-light my-2 my-sm-0 ml-2 far fa-user-circle"></i>{{/if}}
         </a>
@@ -34,25 +33,20 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
                             aria-labelledby="event{{id}}-tab">
-                            <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
-                            {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                            <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
                             <a href="/event/couch/{{id}}">
                                 <p>&nbsp;{{title}}</p>
                             </a>
                         </div>
-                        <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
+                        <div class="tab-pane fade py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
                             aria-labelledby="desc{{id}}-tab">
-                            <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                            <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                            {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                            <span>{{description}}</span>
+                            <svg class="float-left" width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                            <svg class="float-right" width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                            <span>{{description}}</span><p></p>
                         </div>
                     </div>
                 </div>
             </div>
-            {{!-- {{else}}
-                        {{v1}} is not equal to {{v2}} --}}
             {{/ifCond}}
             {{/each}}
 
@@ -93,19 +87,17 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
                             aria-labelledby="event{{id}}-tab">
-                            <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
+                            <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
                             {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
                             <a href="/event/table/{{id}}">
                                 <p>&nbsp;{{title}}</p>
                             </a>
                         </div>
-                        <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
+                        <div class="tab-pane fade py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
                             aria-labelledby="desc{{id}}-tab">
-                            <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                            <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                            {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                            <span>{{description}}</span>
+                            <svg class="float-left" width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                            <svg class="float-right" width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                            <span>{{description}}</span><p></p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +123,7 @@
             <img src="assets/images/turf.png" width="280px">
             <div class="row">
                 <div class="col-12 couchEventHeader">
-                    <a class="indexLink" href="/turf-event" style="color: #f7ae3f">TURF EVENTS</a>
+                    <a class="indexLink" href="/event/turf" style="color: #f7ae3f">TURF EVENTS</a>
                 </div>
             </div>
 
@@ -152,19 +144,16 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active text-left py-3 px-2" id="event{{id}}" role="tabpanel"
                             aria-labelledby="event{{id}}-tab">
-                            <svg width="40" height="40" data-jdenticon-value={{title}}></svg>
-                            {{!-- <img class="eventIcon rounded float-left" src="assets/images/sf5.png" width="50px"> --}}
+                            <svg class="float-left" width="40" height="40" data-jdenticon-value={{title}}></svg>
                             <a href="/event/turf/{{id}}">
                                 <p>&nbsp;{{title}}</p>
                             </a>
                         </div>
-                        <div class="tab-pane fade text-left py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
+                        <div class="tab-pane fade py-3 px-2 text-center" id="desc{{id}}" role="tabpanel"
                             aria-labelledby="desc{{id}}-tab">
-                            <svg width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
-                            <svg width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
-                            {{!-- <img src="assets/images/peggy.png" class="rounded float-left" alt="..." width="50px">
-                                    <img src="assets/images/phillipa.png" class="rounded float-right" alt="..." width="50px"> --}}
-                            <span>{{description}}</span>
+                            <svg class="float-left" width="40" height="40" data-jdenticon-value={{team_one_name}}></svg>
+                            <svg class="float-right" width="40" height="40" data-jdenticon-value={{team_two_name}}></svg>
+                            <span>{{description}}</span><p></p>
                         </div>
                     </div>
                 </div>

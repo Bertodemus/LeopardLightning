@@ -7,9 +7,9 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="/event/Couch">Couch Events</a>
-                <a class="nav-link" href="/event/Table">Table Events</a>
-                <a class="nav-link" href="/event/Turf">Turf Events</a>            
+                <a class="nav-link active" href="/event/couch">Couch Events</a>
+                <a class="nav-link" href="/event/table">Table Events</a>
+                <a class="nav-link" href="/event/turf">Turf Events</a>            
             </div>
         </div>
 
@@ -21,125 +21,101 @@
     <div id="main">
         <div class="row py-3">
             <div class="col-6 text-center my-auto">
-                <h1 class="eventTitleBig">{{title}}</h1>
+                <h1 class="eventTitleBig">{{dbevent.title}}</h1>
             </div>
             <div class="col-6 text-center">
-                <img src="/assets/images/couchanglefull.png" width="500px" >
+                <img src="/assets/images/CouchAnglefull.png" width="500px" >
+            </div>
+        </div>
+
+        <!-- EVENT NUMBER ONE ROWS-->
+        <!-- EVENT NUMBER ONE HEADER-->
+        <div class="row eventOne">
+
+            <div class="col-6 text-center pl-4 pr-0">
+
+                <div class="row pb-1 px-3">
+                    <div class="col-12 couchEventHeader">
+                        {{dbevent.team_one_name}}
+                    </div>
+                    <div id="oppon1"></div>
+                </div>
+            
+
+                <!-- STAT BOX-->
+                <div class="row eventStats px-3 h-100">
+                    <div class="col-12 py-2 event-turf">
+                        <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
+                            {{!-- <div style="width: auto; height: 300px;"> --}}
+                                <p class="statsText1 py-2 px-2">
+                                    {{dbevent.team_one_stat}}
+                                </p>
+                            {{!-- </div> --}}
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- EVENT NUMBER ONE ROWS-->
-            <!-- EVENT NUMBER ONE HEADER-->
-            <div class="row eventOne">
-                <div class="col-6 text-center pl-5 pr-0">
-                    <div class="row pb-1 px-3">
-                        <div class="col-12 couchEventHeader">
-                            {{dbevent.team_one_name}}
-                        </div>
-                        {{!-- this is here for the progressbar.js  --}}
-                        <div id="oppon1"></div>
-                    </div>
+            <div class="col-6 text-center pr-4 pl-0">
 
-                    <!-- STAT BOX-->
-                    <div class="row eventStats px-3">
-                        <div class="col-12 py-2 event-turf">
-                            <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
-                                <div style="width: auto; height: 300px;">
-                                    <p class="statsText1 py-2 px-2">
-                                        {{dbevent.team_one_stat}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row pb-1 px-3">
+                    <div class="col-12 couchEventHeader">
+                        {{dbevent.team_two_name}}
                     </div>
-    
-            
-                    <!-- COMMENT HEADER-->
-                    <div class="row pb-1 pt-2 px-3">
-                        <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{dbevent.team_one_name}}
-
-                        </div>
-                    </div>
-        
-                    <!-- USER COMMENTS-->
-                    <div class="row px-3 pb-1">
-                        <div class="col-12 py-2 event-turf">
-                            <ul class="list-group text-left">
-                                {{#each couchEvent.teamOne.comments}}
-                                    {{!-- this will probably have to be an array --}}
-                                    <li class="listOne list-group-item">{{this}}</li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-
+                    <div id="oppon1"></div>
                 </div>
             
-                <!-- EVENT NUMBER TWO ROWS-->
-                <!-- EVENT NUMBER TWO HEADER-->
-                <div class="col-6 text-center pl-0 pr-5">
 
-                    <div class="row pb-1 px-3">
-                        <div class="col-12 couchEventHeader">
-                            {{dbevent.team_two_name}}
+                <!-- STAT BOX-->
+                <div class="row eventStats px-3 h-100">
+                    <div class="col-12 py-2 event-turf">
+                        <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
+                            {{!-- <div style="width: auto; height: 300px;"> --}}
+                                <p class="statsText1 py-2 px-2">
+                                    {{dbevent.team_two_stat}}
+                                </p>
+                            {{!-- </div> --}}
                         </div>
                     </div>
-
-                    <!-- STAT BOX-->
-                    <div class="row eventStats px-3">
-                        <div class="col-12 py-2 event-turf">
-                            <div class="tab-pane text-left py-3 px-2" id="eventStats1" width="200px">
-                                <div style="width: auto; height: 300px;">
-                                    <p class="statsText2 py-2">
-                                        {{dbevent.team_two_stat}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- COMMENT BOX-->
-                    <div class="row pt-2 pb-1 px-3">
-                        <div class="col-12 couchEventHeader">
-                        COMMENTS FOR {{dbevent.team_two_name}}
-                        </div>
-                    </div>
-            
-                    <!-- USER COMMENTS-->
-                    <div class="row px-3 pb-1">
-                        <div class="col-12 py-2 event-turf">
-                            <ul class="list-group text-left">
-                                {{#each couchEvent.teamTwo.comments}}
-                                    {{!-- this will probably have to be an array --}}
-                                    <li class="listOne list-group-item">{{this}}</li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-        
                 </div>
+
             </div>
+        </div>
 
-            <div class="col-12">
-                <!-- COMMENT BOX HEADER-->
-                <div class="row ml-1 mr-1 pl-3 pr-3 pb-1 pt-1">
-                    <div class="col-12 text-center couchEventHeader">
-                        BACK UP YOUR PROJECTED WINNER
-                    </div>
-                </div>
+            <div class="pl-3 pr-3 pb-1 pt-1 mb-1">
+                {{!-- <input class="btn btn-warning float-left ml-5 px-5" type="submit" value="Vote for Player 1!" id="vote-one">
+                <input class="btn btn-warning float-right mr-5 px-5" type="submit" value="Vote for Player 2!" id="vote-two">  --}}
                 
 
                 <!-- COMMENT BOX-->
-                <form class="text-center pb-2">
-                    <div class="form-group ml-1 mr-1 pl-3 pr-3">
-                        <textarea class="form-control" id="formControlTextarea" rows="3" placeholder="Comment on why you think your choice will win..."></textarea>
-                        <input class="btn btn-warning float-left ml-5 px-5" id="vote-one" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_one_name}}!">
-                        <input class="btn btn-warning float-right mr-5 px-5" id="vote-two" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_two_name}}!">
+                <form class="text-center pb-2 mb-0">
+                    <div class="form-group ml-1 mr-1 pl-3 pr-3 mt-4">
+                        <input class="btn btn-warning float-left" id="vote-one" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_one_name}}!">
+                        <input id="teamOneVote" type="text" readonly class="btn btn-light float-left" value="{{dbevent.team_one_votes}}">
+                        <input class="btn btn-warning float-right" id="vote-two" data-id={{dbevent.id}} type="submit" value="Vote for {{dbevent.team_two_name}}!">
+                        <input id="teamTwoVote" type="text" readonly class="btn btn-light float-right" value="{{dbevent.team_two_votes}}">
                     </div>
                 </form>
                 <br>
 
-                <div class="progress">
+            </div>
+
+            <!-- COMMENT BOX HEADER-->
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12 text-center couchEventHeader">
+                    BACK UP YOUR PROJECTED WINNER
+                </div>
+            </div>       
+            
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12">
+                    <div id="disqus_thread"></div>
+                </div>
+            </div>                             
+            <br>
+
+                {{!-- <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: {{dbevent.team_one_votes}}" aria-valuenow={{dbevent.team_one_votes}} aria-valuemin="0" aria-valuemax="100">{{dbevent.team_one_name}}: {{dbevent.team_one_vote}}</div>
                 </div>
 
@@ -150,17 +126,16 @@
                 <!-- PICTURES-->
                 <div class="row ml-1 mr-1 pl-3 pr-3 mb-3">
                     <div class="col-12 couchEventHeader">
-                        <br>
+                        <br> --}}
+
+
+            <!-- PICTURES-->
+            <div class="row pl-4 pr-4 pb-1 pt-1">
+                <div class="col-12 couchEventHeader">
+                    <br>
                     </div>
                 </div>
-                
             </div>
-
-
-        </div>
-
-
-    </div>
 
     <!-- FOOTER -->
     <footer class="footer pt-3 pb-3">
@@ -169,4 +144,26 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="js/bar.js"></script>
+
+
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://leopardlightning.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script src="/js/vote.js"></script>
+
+    
