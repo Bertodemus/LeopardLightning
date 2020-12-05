@@ -5,7 +5,7 @@
 ---
 Compete with individuals all over the world on a variety of sporting, gaming and e-sport events. Pick an event, talk your trash, vote and see if you picked the correct winner.
 
-[Check out the deployed site here] (DEPLOYED SITE)
+[Check out the deployed site here](https://leopard-ta.herokuapp.com/)
 
 ## Table of Contents
 
@@ -100,10 +100,9 @@ WHEN I click “Generate”, the event will be created for others to debate on
 WHEN I click "All Events", I am presented with the main page of events
 THEN I can see all the couch, table and turf events with an individualized description
 WHEN I click on the event button I am redirected to that event's specific page
-THEN I am able to see the two teams/players who are competing and who members are voting for, and why they believe their choice will win
+THEN I am able to see the two teams/players information, total vote count, and comment box
 WHEN I want to join the debate, I make a comment in the comment box
-THEN I click on the corresponding button associated with who I think will win
-WHEN the button is clicked the comment will appear and the vote will populate to the correct choice
+THEN I vote by clicking the button associated with who I believe will win
 SO I can compete and connect with others, anywhere anytime. 
 ```
 
@@ -127,6 +126,15 @@ Displaying previous official win/loss record, comments and user input on who was
 
 Allow members to gain points and ranking based on how many projections they get correct and how active they are on Together Against
 
+### Event Control
+**Event management would allow for a better user experience**
+
+There are a number of additional functionalities that would make for a better user experience. Eventually, the events commenting and voting features would close after the event is finished. This would allow members to see which opponent won...without people knowing the outcome. Also, creating a search bar would allow members to quickly find an event. 
+
+### Top Events and Highlights
+**Show the people what they want to see**
+
+Everyone loves highlights and top events when to comes to compeititons. We would like to give our members that experience. Adding a "Top Events" page would allow members to see where others are commenting and voting the most at that time. Additionally, allowing members to view and vote on top highlights throughout would add more interaction with the app. 
 
 
 ## Links and Screenshots
